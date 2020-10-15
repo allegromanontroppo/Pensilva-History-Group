@@ -1,0 +1,167 @@
+@import 'normalize';
+
+@import url(https://fonts.googleapis.com/css?family=Vollkorn);
+
+// https://kuler.adobe.com/Copper-Accents-color-theme-1085214/edit/?copy=true&base=2&rule=Custom&selected=4&name=Copy%20of%20Copper%20Accents&mode=rgb&rgbvalues=0.7490196078431373,0.403921568627451,0.023529411764705882,0.6549019607843137,0.30196078431372547,0,0.45098039215686275,0.21176470588235294,0,0.2980392156862745,0.11764705882352941,0,0.24705882352941178,0.09803921568627451,0&swatchOrder=0,1,2,3,4
+$copper-one: #a74d00;
+$copper-three: #bf6706;
+$copper-five: #3f1900;
+
+// $copper-three: #B87333;
+// $copper-four: #A74D00;
+// $copper-one: #733600;
+// $copper-two: #4C1E00;
+
+@import 'foundation/settings';
+@import 'foundation';
+
+body {
+}
+
+.banner-img {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 60.865%;
+
+  @media #{$medium-up} {
+    padding-bottom: 51.2%;
+  }
+
+  .atmospheric {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 100% auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    -webkit-transform: translateZ(0);
+
+    @media #{$large-up} {
+      background-position-y: 65%;
+    }
+  }
+  .title-area {
+    position: absolute;
+    bottom: 10%;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+
+    h1 {
+      color: $white;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 15px;
+      -moz-text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+      -webkit-text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+      text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+
+      @media #{$medium-up} {
+        font-size: rem-calc(50);
+      }
+
+      @media #{$large-up} {
+        font-size: rem-calc(66);
+      }
+    }
+    h2 {
+      color: $white;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.15;
+      -moz-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      -webkit-text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+      position: relative;
+      display: inline-block;
+      padding: 16px 35px 21px;
+
+      font-size: rem-calc(20);
+      @media #{$medium-up} {
+        font-size: rem-calc(28);
+      }
+
+      @media #{$large-up} {
+        font-size: rem-calc(32);
+      }
+
+      &:before {
+        content: ' ';
+        height: 5px;
+        display: block;
+        background: #fff;
+        width: 98%;
+        margin-left: 1%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+        -moz-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+        margin-top: -2px;
+      }
+    }
+  }
+}
+
+main {
+  padding-top: rem-calc(30);
+  padding-bottom: rem-calc(30);
+}
+
+.gallery {
+  li > a {
+    position: relative;
+    p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      background: $aluminum;
+      background: transparentize($jumbo, 0.5);
+      color: $ghost;
+      margin: 0;
+    }
+
+    form {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 10;
+      input {
+        margin: 0;
+      }
+    }
+  }
+}
+
+footer {
+  padding-top: rem-calc(20);
+  padding-bottom: rem-calc(20);
+  background: $topbar-bg-color;
+
+  &,
+  a,
+  a:hover {
+    color: $topbar-link-color;
+  }
+
+  a,
+  a:hover {
+    text-decoration: underline;
+  }
+
+  p {
+    font-size: smaller;
+  }
+}
+
+.sub-nav {
+  background-color: #f2f2f2;
+  padding: 10px 10px 10px 0;
+}
+
+@import 'magnific_popup';

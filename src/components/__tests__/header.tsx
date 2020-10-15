@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
-import * as React from "react";
-import * as renderer from "react-test-renderer";
+import * as React from 'react';
+import * as renderer from 'react-test-renderer';
 
-import Header from "../header";
+import TopBar from '../top-bar';
 
-describe("Header", () => {
-	it("renders correctly", () => {
+describe('TopBar', () => {
+	it('renders correctly', () => {
 		const tree = renderer
-			.create(<Header siteTitle="Default Starter" />)
+			.create(<TopBar siteTitle="Default Starter" />)
 			.toJSON();
 		expect(tree).toMatchSnapshot();
 	});

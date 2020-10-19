@@ -15,7 +15,7 @@ import '../styles/layout.scss';
 
 const Layout: React.FC = ({ children }) => {
 	const { site } = useStaticQuery(graphql`
-		query SiteTitleQuery {
+		query {
 			site {
 				siteMetadata {
 					title

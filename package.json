@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-typescript",
+  "name": "pensilva-history-group",
   "private": true,
   "description": "TypeScript version of the default Gatsby starter",
   "version": "0.1.0",
@@ -32,6 +32,7 @@
     "@typescript-eslint/parser": "^2.22.0",
     "babel-jest": "^25.3.0",
     "babel-preset-gatsby": "^0.3.1",
+    "env-cmd": "^10.1.0",
     "eslint": "^6.8.0",
     "gatsby-plugin-eslint": "^2.0.8",
     "identity-obj-proxy": "^3.0.0",
@@ -53,7 +54,7 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
+    "develop": "env-cmd -f .env.development gatsby develop",
     "format": "prettier --check \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",
     "lint": "eslint .",
     "prettier": "prettier --write \"**/*.{css,js,jsx,json,md,ts,tsx,yml}\"",

@@ -25,19 +25,17 @@ interface SEOProps {
 }
 
 const SEO = ({ description, lang, meta, title }: SEOProps) => {
-	const { site } = useStaticQuery(
-		graphql`
-			query {
-				site {
-					siteMetadata {
-						title
-						description
-						author
-					}
+	const { site } = useStaticQuery(graphql`
+		query {
+			site {
+				siteMetadata {
+					title
+					description
+					author
 				}
 			}
-		`
-	);
+		}
+	`);
 
 	const metaDescription = description || site.siteMetadata.description;
 

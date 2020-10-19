@@ -2,27 +2,36 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import heroStyles from '../styles/hero.module.scss';
+
 const Hero: React.FC = () => {
-	const data = useStaticQuery(graphql`
+	const { site, placeholderImage } = useStaticQuery(graphql`
 		query {
 			site {
 				siteMetadata {
 					title
 				}
 			}
+			placeholderImage: file(relativePath: { eq: "engine-house.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 1500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 		}
 	`);
 
 	return (
-		<header className="banner-img">
+		<header className={heroStyles.bannerImg}>
 			<div
-				className="atmospheric"
+				className={heroStyles.atmospheric}
 				style={{
-					backgroundImage: `url(https://pensilva-history-group.netlify.app/images/engine-house-large-1500x.jpg)`
+					backgroundImage: `url(${placeholderImage.childImageSharp.fluid.src})`
 				}}
 			>
-				<div className="title-area">
-					<h1>{data.site.siteMetadata.title}</h1>
+				<div className={heroStyles.titleArea}>
+					<h1>{site.siteMetadata.title}</h1>
 				</div>
 			</div>
 		</header>

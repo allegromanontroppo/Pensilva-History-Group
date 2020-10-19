@@ -1,0 +1,30 @@
+@import 'colours';
+@import 'foundation/settings';
+@import 'foundation';
+
+.gallery {
+  li > a {
+    position: relative;
+    p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      background: $aluminum;
+      background: transparentize($jumbo, 0.5);
+      color: $ghost;
+      margin: 0;
+    }
+
+    form {
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 10;
+      input {
+        margin: 0;
+      }
+    }
+  }
+}

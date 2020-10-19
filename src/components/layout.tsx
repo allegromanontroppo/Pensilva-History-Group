@@ -14,11 +14,12 @@ import TopBar from './top-bar';
 import '../styles/layout.scss';
 
 const Layout: React.FC = ({ children }) => {
-	const data = useStaticQuery(graphql`
+	const { site } = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
 				siteMetadata {
 					title
+					author
 				}
 			}
 		}
@@ -26,14 +27,15 @@ const Layout: React.FC = ({ children }) => {
 
 	return (
 		<>
-			<TopBar siteTitle={data.site.siteMetadata.title} />
+			<TopBar siteTitle={site.siteMetadata.title} />
 			<main>{children}</main>
 			<footer>
 				<div className="row">
 					<div className="column">
-						© {new Date().getFullYear()}, Built with
+						© {new Date().getFullYear()}. Built with
 						{` `}
-						<a href="https://www.gatsbyjs.org">Gatsby</a>
+						<a href="https://www.gatsbyjs.org">Gatsby</a> by{' '}
+						{site.siteMetadata.author}
 					</div>
 				</div>
 			</footer>

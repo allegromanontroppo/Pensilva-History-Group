@@ -1,6 +1,5 @@
 ---
 title: Childhood Memories of an Evacuee - Sunday Observance
-slug: childhood-memories-of-an-evacuee-sunday-observance
 images:
   - path: DSC01538.JPG
   - path: DSC01539.JPG

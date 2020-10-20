@@ -1,6 +1,5 @@
 ---
 title: Gypsies in Pensilva
-slug: gypsies-in-pensilva
 ---
 
 The following email has been received form Mrs Marie Bennett in Hertfordshire:-

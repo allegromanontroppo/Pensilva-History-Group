@@ -1,6 +1,5 @@
 ---
 title: William West
-slug: william-west
 images:
   - path: DSC00641.JPG
     title: William West 1801 - 1879

@@ -1,6 +1,5 @@
 ---
 title: Mrs Marie Bennett
-slug: mrs-marie-bennett
 image:
   - path: Marie.jpg
     title: Marie aged about 4 with her parents outside 'Silver Down Farm' in Shute Lane, Pensilva

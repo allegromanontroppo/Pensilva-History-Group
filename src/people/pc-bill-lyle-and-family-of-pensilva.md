@@ -1,6 +1,5 @@
 ---
 title: PC Bill Lyle and Family of Pensilva
-slug: pc-bill-lyle-and-family-of-pensilva
 ---
 
 The following email has been received from Sally Perkins in Australia:-

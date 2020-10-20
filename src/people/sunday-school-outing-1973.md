@@ -1,6 +1,5 @@
 ---
 title: Sunday School Outing 1973
-slug: sunday-school-outing-1973
 images:
   - path: DSC01197.JPG
 ---

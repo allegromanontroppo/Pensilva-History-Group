@@ -1,6 +1,5 @@
 ---
 title: The Davis Family
-slug: the-davis-family
 images:
   - path: DanDavis_family1922Springfield.jpg
     title: The Davis family at 'Springfield'

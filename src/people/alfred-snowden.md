@@ -1,6 +1,5 @@
 ---
 title: Alfred Snowden
-slug: alfred-snowden
 images:
   - path: SnowdenA1.jpg
   - path: SnowdenA3.jpg

@@ -1,6 +1,5 @@
 ---
 title: The Tregilgas Family
-slug: the-tregilgas-family
 images:
   - path: john_tregilgas.jpg
     title: John Treligas

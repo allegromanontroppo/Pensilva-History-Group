@@ -2,38 +2,17 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+
+import People from '../data/people';
+import Places from '../data/places';
 
 interface TopBarProps {
 	siteTitle: string;
 }
 
-interface Person {
-	node: {
-		frontmatter: {
-			title: string;
-			slug: string;
-		};
-	};
-}
-
 const TopBar = ({ siteTitle }: TopBarProps) => {
-	const {
-		allMarkdownRemark: { edges: people }
-	} = useStaticQuery(graphql`
-		query {
-			allMarkdownRemark(sort: { fields: [frontmatter___title], order: ASC }) {
-				edges {
-					node {
-						frontmatter {
-							title
-							slug
-						}
-					}
-				}
-			}
-		}
-	`);
+	const people = new People();
+	const places = new Places();
 
 	return (
 		<div className="contain-to-grid show-for-large-up">
@@ -49,17 +28,21 @@ const TopBar = ({ siteTitle }: TopBarProps) => {
 					<ul className="right">
 						<li className="divider"></li>
 						<li className="has-dropdown">
-							<Link to="/places">Places</Link>
-							<ul className="dropdown"></ul>
+							<Link to="/places">{places.count} Places</Link>
+							<ul className="dropdown">
+								{places.all.map(({ slug, title }) => (
+									<li>
+										<Link to={`/places/${slug}`}>{title}</Link>
+									</li>
+								))}
+							</ul>
 						</li>
 						<li className="has-dropdown">
-							<Link to="/people">{people.length} People</Link>
+							<Link to="/people">{people.count} People</Link>
 							<ul className="dropdown">
-								{people.map((person: Person) => (
+								{people.all.map(({ slug, title }) => (
 									<li>
-										<Link to={`/people/${person.node.frontmatter.slug}`}>
-											{person.node.frontmatter.title}
-										</Link>
+										<Link to={`/people/${slug}`}>{title}</Link>
 									</li>
 								))}
 							</ul>

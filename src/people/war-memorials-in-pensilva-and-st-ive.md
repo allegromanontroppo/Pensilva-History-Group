@@ -1,6 +1,5 @@
 ---
 title: War Memorials in Pensilva and St Ive
-slug: war-memorials-in-pensilva-and-st-ive
 images:
   - path: _T2eC16FHJFoE9nh6m__HBQzO_6dw4Q__60_58.JPG
     title:

@@ -1,6 +1,5 @@
 ---
 title: The Salvation Army
-slug: the-salvation-army
 images:
   - path: Sally_Army_Hut_001.jpg
   - path: Sally_Army_Hut_002.jpg

@@ -1,6 +1,5 @@
 ---
 title: Local Ghost Story
-slug: local-ghost-story
 ---
 
 The following article is reproduced by kind permission of Yvonne Gilbert:-

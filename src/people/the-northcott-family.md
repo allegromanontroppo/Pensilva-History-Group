@@ -1,6 +1,5 @@
 ---
 title: The Northcott Family
-slug: the-northcott-family
 images:
   - path: DSC01179.JPG
     title:

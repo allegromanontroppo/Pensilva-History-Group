@@ -1,6 +1,5 @@
 ---
 title: Kelly's Directory 1883
-slug: kellys-directory-1883
 ---
 
 The following information is extracted from Kelly's Directory of 1883.

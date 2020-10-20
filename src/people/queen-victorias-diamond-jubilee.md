@@ -1,6 +1,5 @@
 ---
 title: Queen Victoria's Diamond Jubilee
-slug: queen-victorias-diamond-jubilee
 images:
   - path: Queen-Victoria-Official-DJ-Portrait-SM_0.jpg
 ---

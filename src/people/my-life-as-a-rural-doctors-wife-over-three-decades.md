@@ -1,6 +1,5 @@
 ---
 title: My Life as a Rural Doctor's Wife over 3 Decades
-slug: my-life-as-a-rural-doctors-wife-over-three-decades
 images:
   - path: Jane_House2.jpg
     title: The Old Parsonage, Pensilva

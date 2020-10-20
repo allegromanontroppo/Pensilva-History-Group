@@ -1,6 +1,5 @@
 ---
 title: Pensilva Coronation Day - 2nd June 1953
-slug: pensilva-coronation-day-second-june-1953
 images:
   - path: elizabethii.jpg
   - path: vintage-cornonation-tea-cup.jpg

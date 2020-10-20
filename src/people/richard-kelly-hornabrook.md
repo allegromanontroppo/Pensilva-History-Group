@@ -1,6 +1,5 @@
 ---
 title: Richard Kelly Hornabrook
-slug: richard-kelly-hornabrook
 ---
 
 The following email has been received from Patricia McCartney (nee Hornabrook):-

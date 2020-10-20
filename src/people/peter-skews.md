@@ -1,6 +1,5 @@
 ---
 title: Peter Skews
-slug: peter-skews
 images:
   - path: Peter_Skews_005__2_.jpg
 ---

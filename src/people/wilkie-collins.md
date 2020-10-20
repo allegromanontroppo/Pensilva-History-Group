@@ -1,6 +1,5 @@
 ---
 title: Wilkie Collins
-slug: wilkie-collins
 images:
   - path: 6663198.jpg
   - path: cheese.jpg

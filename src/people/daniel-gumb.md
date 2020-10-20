@@ -1,6 +1,5 @@
 ---
 title: Daniel Gumb
-slug: daniel-gumb
 images:
   - path: old_phots_001.jpg
     title: Daniel Gumb's house

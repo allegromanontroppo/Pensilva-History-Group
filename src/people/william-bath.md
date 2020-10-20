@@ -1,6 +1,5 @@
 ---
 title: William Bath
-slug: william-bath
 images:
   - path: The_Bath_Family.jpg
     title: William's son Thomas (seated centre row) his wife Mary on his right.   His sons (back row left to right) William, Charles. Thomas, Fred.   Seated on grass George.   His daughters centre row left Louise right Emily.

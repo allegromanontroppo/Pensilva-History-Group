@@ -1,6 +1,5 @@
 ---
 title: Emily Hobhouse
-slug: emily-hobhouse
 images:
   - path: EmilyHobhouse.jpg
   - path: en-emily-hobhouse2.jpg

@@ -1,6 +1,5 @@
 ---
 title: The Independent Order of Rechabites
-slug: the-independent-order-of-rechabites
 images:
   - path: Rechabites_001.jpg
     title:

@@ -1,6 +1,5 @@
 ---
 title: William Pollard
-slug: william-polland
 images:
   - path: 1.jpg
     title: Woolston Cottage

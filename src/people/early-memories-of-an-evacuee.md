@@ -1,6 +1,5 @@
 ---
 title: Early Memories of an Evacuee
-slug: early-memories-of-an-evacuee
 images:
   - path: DSC01537.JPG
 ---

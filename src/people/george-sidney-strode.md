@@ -1,6 +1,5 @@
 ---
 title: George Sidney Strode
-slug: george-sidney-strode
 ---
 
 The Strode family of Newnham Park, Plympton, Devon, were wealthy landowners owning land and property in Devon and Cornwall in the 1800s and early 1900s. In 1851 they owned much of the Middle Hill area of Pensilva and the leases to land and buildings thereon. If you live in a cottage south of the Lower Road in Pensilva it is quite likely that George Strode will appear on the deeds to your property.

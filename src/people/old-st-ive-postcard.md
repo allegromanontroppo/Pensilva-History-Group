@@ -1,6 +1,5 @@
 ---
 title: Old St Ive Postcard
-slug: old-st-ive-postcard
 images:
   - path: Scan_20141003__2_.png
 ---

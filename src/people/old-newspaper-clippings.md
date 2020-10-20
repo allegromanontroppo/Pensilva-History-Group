@@ -1,6 +1,5 @@
 ---
 title: Old Newspaper Clippings
-slug: old-newspaper-clippings
 ---
 
 We have been reprinting extracts from old newspapers on our Homepage and regularly replacing them with different articles. Many of these articles are funny, interesting or tragic and instead of just deleting them we will in future save them here.

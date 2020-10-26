@@ -14,17 +14,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } = actions;
 
     const slug = createFilePath({ node, getNode, basePath: 'pages' });
-    createNodeField({
-      node,
-      name: 'slug',
-      value: slug,
-    });
-
     const type = path.basename(path.dirname(node.fileAbsolutePath));
-    createNodeField({
-      node,
-      name: 'type',
-      value: type,
-    });
+
+    for (const [name, value] of Object.entries({ slug, type })) {
+      createNodeField({ node, name, value });
+    }
   }
 }

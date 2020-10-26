@@ -11,7 +11,6 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import TopBar from './top-bar';
-import '../styles/layout.scss';
 
 const Layout: React.FC = ({ children }) => {
 	const { site } = useStaticQuery(graphql`

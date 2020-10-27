@@ -30,7 +30,7 @@ const TopBar = ({ siteTitle }: TopBarProps) => {
 						<li className="has-dropdown">
 							<Link to="/places">{places.count} Places</Link>
 							<ul className="dropdown">
-								{places.all.map(({ slug, title }) => (
+								{places.map(({ slug, title }) => (
 									<li>
 										<Link to={`/places/${slug}`}>{title}</Link>
 									</li>
@@ -40,7 +40,7 @@ const TopBar = ({ siteTitle }: TopBarProps) => {
 						<li className="has-dropdown">
 							<Link to="/people">{people.count} People</Link>
 							<ul className="dropdown">
-								{people.all.map(({ slug, title }) => (
+								{people.map(({ slug, title }) => (
 									<li>
 										<Link to={`/people/${slug}`}>{title}</Link>
 									</li>

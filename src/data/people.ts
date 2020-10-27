@@ -1,9 +1,16 @@
 
 import { useStaticQuery, graphql } from 'gatsby';
 
-interface Person {
+interface Image {
   title: string;
+  path: string;
+}
+interface Person {
   slug: string;
+  title: string;
+  excerpt: string;
+  html: string;
+  images: Image[];
 }
 
 class People {
@@ -19,8 +26,14 @@ class People {
           sort: { fields: [frontmatter___title], order: ASC }) {
           edges {
             node {
+              html
+              excerpt(format: HTML, pruneLength: 350, truncate: true)
               frontmatter {
                 title
+                images {
+                  path
+                  title
+                }
               }
               fields {
                 slug
@@ -32,7 +45,10 @@ class People {
     `);
 
     this.data = edges.map((edge: any) => ({
+      html: edge.node.html,
+      excerpt: edge.node.excerpt,
       title: edge.node.frontmatter.title,
+      images: edge.node.frontmatter.images || [],
       slug: edge.node.fields.slug,
     }));
   }
@@ -41,8 +57,8 @@ class People {
     return this.data.length;
   }
 
-  get all(): Person[] {
-    return this.data;
+  map(callbackfn: (value: Person, index: number, array: Person[]) => unknown) {
+    return this.data.map(callbackfn);
   }
 }
 

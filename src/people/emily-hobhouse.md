@@ -58,7 +58,7 @@ Perhaps [General Smuts](http://en.wikipedia.org/wiki/Jan_Smuts), a life-long fri
 
 > We stood alone in the world, friendless among the people, the smallest nation ranged against the mightiest empire on the earth. Then one small hand, the hand of a woman was stretched out to us. At that darkest hour when our race almost seemed doomed to destruction she appeared, as an angel, as a heaven sent messenger, and strangest of all she was an Englishwoman.
 
----_The following Article appeared in The Western Morning News on Friday 3rd June 1994_
+_The following Article appeared in The Western Morning News on Friday 3rd June 1994_
 
 ### Cornish 'Nightingale' will be remembered
 
@@ -90,21 +90,21 @@ He spoke to an elderly resident of the town, who thought the property in questio
 
 Enquiries by Trevor Richards. the general manager, and a search through the deeds, supplied the missing piece of the historical jigsaw puzzle. The ceremony is at 3pm.
 
----#### 19 June 1901: The South African concentration camps
+#### 19 June 1901: The South African concentration camps
 
 [Emily Hobhouse reports from inside the internment centres where Boer women and children face squalor and starvation](http://www.theguardian.com/theguardian/from-the-archive-blog/2011/may/19/guardian190-south-africa-concentration-camps)
 
----### That Englishwoman
+### That Englishwoman
 
 <div class="flex-video">
 <iframe width="100%" height="720" src="//www.youtube.com/embed/FsJ7pPiMAz8?rel=0" frameborder="0" allowfullscreen></iframe></div>
 
----### Bethulie's British Concentration Camp and Emily Hobhouse
+### Bethulie's British Concentration Camp and Emily Hobhouse
 
 <div class="flex-video">
 <iframe width="100%" height="720" src="//www.youtube.com/embed/luhea9KauXg?rel=0" frameborder="0" allowfullscreen></iframe></div>
 
----### 'n Song vir Emily
+### 'n Song vir Emily
 
 <div class="flex-video">
 <iframe width="100%" height="720" src="//www.youtube.com/embed/rGjo2Y25M5A?rel=0" frameborder="0" allowfullscreen></iframe></div>

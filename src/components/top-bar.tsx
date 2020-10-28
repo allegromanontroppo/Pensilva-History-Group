@@ -2,17 +2,49 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-
-import People from '../data/people';
-import Places from '../data/places';
+import { useStaticQuery, graphql } from 'gatsby';
 
 interface TopBarProps {
 	siteTitle: string;
 }
 
 const TopBar = ({ siteTitle }: TopBarProps) => {
-	const people = new People();
-	const places = new Places();
+	const { people, places } = useStaticQuery(graphql`
+		query {
+			people: allMarkdownRemark(
+				filter: { fields: { type: { eq: "people" } } }
+				sort: { fields: [frontmatter___title], order: ASC }
+			) {
+				totalCount
+				edges {
+					node {
+						frontmatter {
+							title
+						}
+						fields {
+							slug
+						}
+					}
+				}
+			}
+			places: allMarkdownRemark(
+				filter: { fields: { type: { eq: "places" } } }
+				sort: { fields: [frontmatter___title], order: ASC }
+			) {
+				totalCount
+				edges {
+					node {
+						frontmatter {
+							title
+						}
+						fields {
+							slug
+						}
+					}
+				}
+			}
+		}
+	`);
 
 	return (
 		<div className="contain-to-grid show-for-large-up">
@@ -28,21 +60,25 @@ const TopBar = ({ siteTitle }: TopBarProps) => {
 					<ul className="right">
 						<li className="divider"></li>
 						<li className="has-dropdown">
-							<Link to="/places">{places.count} Places</Link>
+							<Link to="/places">{places.totalCount} Places</Link>
 							<ul className="dropdown">
-								{places.map(({ slug, title }) => (
-									<li>
-										<Link to={`/places/${slug}`}>{title}</Link>
+								{places.edges.map((place: any) => (
+									<li key={place.node.fields.slug}>
+										<Link to={`/places/${place.node.fields.slug}`}>
+											{place.node.frontmatter.title}
+										</Link>
 									</li>
 								))}
 							</ul>
 						</li>
 						<li className="has-dropdown">
-							<Link to="/people">{people.count} People</Link>
+							<Link to="/people">{people.totalCount} People</Link>
 							<ul className="dropdown">
-								{people.map(({ slug, title }) => (
-									<li>
-										<Link to={`/people/${slug}`}>{title}</Link>
+								{people.edges.map((person: any) => (
+									<li key={person.node.fields.slug}>
+										<Link to={`/people/${person.node.fields.slug}`}>
+											{person.node.frontmatter.title}
+										</Link>
 									</li>
 								))}
 							</ul>

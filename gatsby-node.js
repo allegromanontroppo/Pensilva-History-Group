@@ -41,7 +41,7 @@ exports.createPages = ({ graphql, actions }) => {
   `).then((result) => {
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
       createPage({
-        path: `people${node.fields.slug}`,
+        path: `people/${node.fields.slug}`,
         component: path.resolve(`./src/templates/person.tsx`),
         context: {
           // Data passed to context is available

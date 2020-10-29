@@ -1,15 +1,10 @@
 /* eslint-disable no-unused-vars */
 import * as React from 'react';
-import { Link } from 'gatsby';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-interface Image {
-	title: string;
-	path: string;
-}
 interface Person {
 	node: {
 		excerpt: string;
@@ -18,7 +13,7 @@ interface Person {
 		};
 		frontmatter: {
 			title: string;
-			images: Image[];
+			preview: string;
 		};
 	};
 }
@@ -50,24 +45,19 @@ const PeoplePage: React.FC<PeoplePageProps> = ({ data }: PeoplePageProps) => {
 							</Link>
 						</h1>
 						<div className="row">
-							{person.node.frontmatter.images ? (
+							{person.node.frontmatter.preview ? (
 								<>
 									<div className="column medium-4 large-3">
 										<Link
 											to={`/people/${person.node.fields.slug}`}
 											className="th"
 										>
-											<img
-												src={person.node.frontmatter.images[0].path}
-												alt={person.node.frontmatter.images[0].title}
-											/>
+											<img src={person.node.frontmatter.preview} />
 										</Link>
 									</div>
 									<div className="column medium-8 large-9">
 										<div
-											dangerouslySetInnerHTML={{
-												__html: person.node.excerpt
-											}}
+											dangerouslySetInnerHTML={{ __html: person.node.excerpt }}
 										/>
 										<Link
 											to={`/people/${person.node.fields.slug}`}
@@ -80,9 +70,7 @@ const PeoplePage: React.FC<PeoplePageProps> = ({ data }: PeoplePageProps) => {
 							) : (
 								<div className="column">
 									<div
-										dangerouslySetInnerHTML={{
-											__html: person.node.excerpt
-										}}
+										dangerouslySetInnerHTML={{ __html: person.node.excerpt }}
 									/>
 									<Link
 										to={`/people/${person.node.fields.slug}`}
@@ -112,10 +100,7 @@ export const query = graphql`
 					excerpt
 					frontmatter {
 						title
-						images {
-							path
-							title
-						}
+						preview
 					}
 					fields {
 						slug

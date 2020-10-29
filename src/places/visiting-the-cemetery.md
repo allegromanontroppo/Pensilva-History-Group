@@ -1,11 +1,11 @@
 ---
 title: Visiting the Cemetery
-images:
-  - path: Yvonne_s_Articles_004.jpg
-    title: Pensilva Cemetery
+preview: Yvonne_s_Articles_004.jpg
 ---
 
 The following article written in 1984 is reproduced by kind permission of Yvonne Gilbert
+
+![Pensilva Cemetery](./visiting-the-cemetery/Yvonne_s_Articles_004.jpg)
 
 Pensilva almost 40 years ago - Going to the Cemetery.
 

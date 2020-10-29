@@ -1,21 +1,24 @@
 ---
 title: My House in Middle Hill
-images:
-  - path: P1010498.JPG
-  - path: History_001.jpg
-  - path: Christmas_002.jpg
+preview: P1010498.JPG
 ---
 
 I live in a cottage which is one of a small terrace in Lower Middle Hill, Pensilva. It was built, I believe around 1850 at the start of the mining boom on Caradon Hill but I cannot find out the exact date.
 
+![My House in Middle Hill](./my-house-in-middle-hill/P1010498.JPG)
+
 I bought my house on 4th December 1972. It was very small having just a sitting room, small kitchen,
 a medium sized bedroom, a small box bedroom with sloping roof and a modern bathroom which had been built onto the end of the cottage. Its walls were thick being made of old fashioned stone and cob and it was a dry and cosy little house. Over the years it got bigger as my family expanded, we tried to make the extensions in keeping with the original house and now, although more than twice as big, it still looks like an attractive Cornish miner's cottage.
+
+![My House in Middle Hill](./my-house-in-middle-hill/History_001.jpg)
 
 The owner before me was Charles Fletcher a shipwright in HM Dockyard Devonport. He inherited the cottage in 1959 on the death of his mother Lucy Parkyn Fletcher.
 
 Lucy Fletcher (wife of the late James Fletcher) bought the cottage on the 1st January 1921 from George Sydney Strode-Strode of Newnham Park, Plympton, Devon, a former Major in the British Army and a Lord High Sheriff of Devon. The Strode family were wealthy landowners who owned land and property in Cornwall and Devon.
 
 Here my house history had ended until a member of the Pensilva History Group came across a set of documents and catalogues concerning the sale of land and property in Middle Hill by the Strode family in 1919. Sure enough the small terrace where I live was part of that sale and the catalogue stated who lived in each cottage in our terrace. Mary Rundle lived in my house.
+
+![My House in Middle Hill](./my-house-in-middle-hill/Christmas_002.jpg)
 
 I quickly visited Liskeard library and looked up the 1901 census on the microfiche. There they were, the people who lived in my house:
 

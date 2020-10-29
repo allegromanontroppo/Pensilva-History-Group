@@ -1,13 +1,13 @@
 ---
 title: Going to the Well
-images:
-  - path: Yvonne_s_Articles_002.jpg
-    title: Site of the old village well
+preview: Yvonne_s_Articles_002-_cornwall.jpg
 ---
 
 The following article written in 1984 is reproduced by kind permission of Yvonne Gilbert.
 
 Pensilva almost 40 years ago - Going to the Well
+
+![Going to the Well](./going-to-the-well/Yvonne_s_Articles_002.jpg)
 
 Did you ever taste the water from the well in St. Ive Road? On the hottest summer day it was icy cold, and it had a delicious flavour better than any spring water I have ever tasted. When the mains water came, we were told the well water was unfit for human consumption. Yet healthy generations were reared on it. I'd fetch a jug of it for drinking if I could.
 

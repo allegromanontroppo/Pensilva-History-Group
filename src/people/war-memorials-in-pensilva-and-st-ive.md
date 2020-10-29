@@ -1,17 +1,13 @@
 ---
 title: War Memorials in Pensilva and St Ive
-images:
-  - path: _T2eC16FHJFoE9nh6m__HBQzO_6dw4Q__60_58.JPG
-    title:
-  - path: Polkinghorne_Grave.jpeg
-    title: James Polkinghorne in Pensilva Cemetery
-  - path: War_memorial_Pensilva.jpg
-    title: War memorial in Pensilva church
-  - path: war_memorial_St_Ive.jpg
-    title: War memorial in St Ive church
-  - path: Warne_Grave.jpeg
-    title: Frederick Warne in Anthony Cemetery
+preview: _T2eC16FHJFoE9nh6m__HBQzO_6dw4Q__60_58.JPG
 ---
+
+![War Memorials in Pensilva and St Ive](./war-memorials-in-pensilva-and-st-ive/_T2eC16FHJFoE9nh6m__HBQzO_6dw4Q__60_58.JPG)
+
+![War memorial in Pensilva church](./war-memorials-in-pensilva-and-st-ive/War_memorial_Pensilva.jpg)
+
+![War memorial in St Ive church](./war-memorials-in-pensilva-and-st-ive/war_memorial_St_Ive.jpg)
 
 ## World War One 1914 – 18
 
@@ -224,6 +220,8 @@ Formerly 16008 D.C.L.I.
 
 ### POLKINGHORNE, James
 
+![James Polkinghorne in Pensilva Cemetery](./war-memorials-in-pensilva-and-st-ive/Polkinghorne_Grave.jpeg)
+
 Petty Officer Stoker, HMS “P 42” K/1492
 
 Died 12/12/1918 Died from Disease Age 30
@@ -264,6 +262,8 @@ b – 1892 St Ive Cornwall
 Enlisted at Bodmin
 
 ### WARNE, Frederick Ernest,
+
+![Frederick Warne in Anthony Cemetery](./war-memorials-in-pensilva-and-st-ive/Warne_Grave.jpeg)
 
 Corporal, Royal Garrison Artillery, ‘Z’ Anti aircraft Bty. 132372
 

@@ -1,10 +1,11 @@
 ---
 title: Early Memories of an Evacuee
-images:
-  - path: DSC01537.JPG
+preview: DSC01537.JPG
 ---
 
 The following has kindly been sent by John Tinham who was evacuated to Pensilva during the war. John has lived in the village of Farnborough in Kent since 1953 and which he tells us is now actually in the London Borough of Bromley.
+
+![Early Memories of an Evacuee](./early-memories-of-an-evacuee/DSC01537.JPG)
 
 When the Second World War started my parents and I were living in Welling, Kent. At the tender age of 11, I had just started Westwood Senior School.
 

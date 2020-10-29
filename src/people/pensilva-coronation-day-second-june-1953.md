@@ -1,13 +1,13 @@
 ---
 title: Pensilva Coronation Day - 2nd June 1953
-images:
-  - path: elizabethii.jpg
-  - path: vintage-cornonation-tea-cup.jpg
+preview: elizabethii.jpg
 ---
 
 The following article has been written and researched by Sandra Pearson, Secretary of the Pensilva History Group.
 
 From The Cornish Times June 5th 1953.
+
+![Pensilva Coronation Day - 2nd June 1953](./pensilva-coronation-day-second-june-1953/elizabethii.jpg)
 
 > <span> **TELEVISION AT PENSILVA**
 
@@ -18,6 +18,8 @@ From The Cornish Times June 5th 1953.
 > A large bonfire was lit on Caradon Hill by Mr E. Hambly. This must have been witnessed by hundreds of people and seen for miles bringing Pensilva's great day to a close.
 
 > **ST IVE**
+
+![Pensilva Coronation Day - 2nd June 1953](./pensilva-coronation-day-second-june-1953/vintage-cornonation-tea-cup.jpg)
 
 > Peals on the church bells commenced the day's festivities with three generations of ringers taking part: Mr Thomas Barrett, his son Richard and Richard's son Tony. A Union Jack flew from the tower.
 

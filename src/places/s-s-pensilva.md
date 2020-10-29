@@ -1,7 +1,6 @@
 ---
 title: S.S. PENSILVA
-images:
-  - path: SS_Pensilva_006.jpg
+preview: SS_Pensilva_006.jpg
 ---
 
 Although the use of the name 'Pensilva' does not appear till the 1891 census, and then only as Pensilva or Bodminland, it has managed to have two ships named after it.
@@ -13,6 +12,8 @@ Its first owners were Pensilva Steam Ship Co. Ltd. (R.B. Chellew), Falmouth. In 
 The Pensilva Steam Ship Co. was incorporated in 1912 and amalgamated with the Pengreep Steam Ship Co. by the liquidator R.B. Chellew in 1918.
 
 The second S.S. Pensilva was built as S.S. Brynmor by Burntisland Shipbuilding Co. Fife, Scotland. It was launched on the 19th October 1929. Its original owners were Ambrose, Davies and Co. of Swansea before joining the Chellew Steam Navigation Co. Ltd. of Cardiff and being re-named Pensilva with a tonnage of 4258. All we know of its travels are to do with its last voyage during the Second World War.
+
+![S.S. PENSILVA](./s-s-pensilva/SS_Pensilva_006.jpg)
 
 It was part of a 32 ship Convoy HG-7 travelling from Durban in South Africa to Dunkirk with a cargo of maize. On the 19th November 1939 the ship was intercepted and sunk by [U-49](<http://en.wikipedia.org/wiki/German_submarine_U-49_(1939)>) north west of Cape Oretegal, Northwest Spain and sunk at 12:19pm in position 46'51N 11'36W without loss of life. The Captain and crew were rescued by the Destroyer HMS Echo and transferred to the Destroyer HMS Wanderer before being landed at Plymouth.
 

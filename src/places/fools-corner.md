@@ -1,17 +1,17 @@
 ---
 title: Fool's Corner
-images:
-  - path: Yvonne_s_Articles_001.jpg
-    title: Fools Corner 2012
-  - path: Fools_Corner.jpg
-    title: New House on Church Hill
+preview: Yvonne_s_Articles_001.jpg
 ---
 
 The following article written in 1984 is reproduced by kind permission of Yvonne Gilbert.
 
 Pensilva almost 40 years ago - Fool's Corner
 
+![Fools Corner 2012](./fools-corner/Yvonne_s_Articles_001.jpg)
+
 Do you know where it was? It will date you. Marsh's Garage occupied the former wet-suit factory; the modern showrooms and garage didn't exist. Instead there was a field. Its stone hedge stretched along the main road from the Church boundary to the bungalow entrance. Beautiful beech trees grew on it. Fool's Corner was the part of this which viewed Higher Road, Church Hill, and Princess Road.
+
+![New House on Church Hill](./fools-corner/Fools_Corner.jpg)
 
 In the long Summer evenings the men used to gather there to discuss any news. They were always delighted when groups of girls passed by. There would be whistles, cat-calls and ribald comments. I wonder how young men indicate their admiration for a young lady today? I remember one whistling after a friend when she was eighteen. She said she walked on air for the rest of the day!
 

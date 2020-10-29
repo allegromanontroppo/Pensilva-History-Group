@@ -1,11 +1,11 @@
 ---
 title: Pensilva - World Heritage Site
-images:
-  - path: PensilvaCrossroadsCornwall.jpg
-    title: Pensilva crossroads
+preview: PensilvaCrossroadsCornwall.jpg
 ---
 
 In 2006 Pensilva was given World Heritage status because of its uniqueness as a rapidly expanding Victorian industrial settlement much of which can still be seen today. Much work was done by Cornwall Council and its Historic Environment Service in preparation for the World Heritage status bid and part of this is a detailed, interesting and very readable report entitled the 'Cornwall Industrial Settlements Initiative'. This report can be found online and is essential reading for anyone with an interest in the history of the village and its surroundings. It can be found at: [www.historic-cornwall.org.uk/cisi/pensilva/pensilva.htm](http://www.historic-cornwall.org.uk/cisi/pensilva/pensilva.htm)
+
+![Pensilva crossroads](./pensilva-world-heritage-site/PensilvaCrossroadsCornwall.jpg)
 
 The following is an extract from the report:
 

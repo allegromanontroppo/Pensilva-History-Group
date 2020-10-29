@@ -22,10 +22,10 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  graphql(`
+  const people = await graphql(`
     query {
       allMarkdownRemark(
         filter: { fields: { type: { eq: "people" } } }) {
@@ -38,21 +38,21 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then((result) => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: `people/${node.fields.slug}`,
-        component: path.resolve(`./src/templates/person.tsx`),
-        context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
-          slug: node.fields.slug,
-        },
-      });
+  `);
+
+  people.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: `people/${node.fields.slug}`,
+      component: path.resolve(`./src/templates/person.tsx`),
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.fields.slug,
+      },
     });
   });
 
-  graphql(`
+  const places = await graphql(`
     query {
       allMarkdownRemark (
         filter: { fields: { type: { eq: "places" } } }) {
@@ -65,17 +65,17 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-  `).then((result) => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: `places/${node.fields.slug}`,
-        component: path.resolve(`./src/templates/place.tsx`),
-        context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
-          slug: node.fields.slug,
-        },
-      });
+  `);
+
+  places.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: `places/${node.fields.slug}`,
+      component: path.resolve(`./src/templates/place.tsx`),
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: node.fields.slug,
+      },
     });
   });
 };

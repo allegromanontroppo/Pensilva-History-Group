@@ -1,17 +1,11 @@
 ---
 title: William Bath
-images:
-  - path: The_Bath_Family.jpg
-    title: William's son Thomas (seated centre row) his wife Mary on his right.   His sons (back row left to right) William, Charles. Thomas, Fred.   Seated on grass George.   His daughters centre row left Louise right Emily.
-  - path: DSC00538.JPG
-    title: The Grocery Shop - 'Trevilder' - John and Cyril Hurrell 1928
-  - path: Bath_Pensilva_Cemetery.JPG
-    title: William and Mary Bath's Headstone in Pensilva Cemetery
-  - path: DSC00540.JPG
-    title: Trevilder today.
+preview: The_Bath_Family.jpg
 ---
 
 The following history of the Bath Family has been kindly provided by Professor Michael Jefferson.
+
+![William's son Thomas (seated centre row) his wife Mary on his right.   His sons (back row left to right) William, Charles. Thomas, Fred.   Seated on grass George.   His daughters centre row left Louise right Emily.](./william-bath/The_Bath_Family.jpg)
 
 William Bath was originally a copper miner, born in Wendron on January 4th, 1818, who died in Pensilva (September 28th, 1869) reputedly from lung disease picked up while mining. He had married Mary Leach Trelease, born in 1822, from Gwennap. By 1861 they were running a grocery shop, in part of their (relatively large) cottage, which Mary ran on her own after William's death. William Bath's gravestone is to be found in Pensilva cemetery, with his wife's name (Mary L. Bath) beneath - she died on September 9th, 1895. They lived at what is now named 'Trevilder', on the corner of Shute Lane and Fore Street. In the yard there was a barn for animals and storage, and a dairy for making butter and cheese. Numerous original internal features remain, some dairy implements, and a one penny coin of 1841 cemented into the storneowrk which indicates the year the house was built.
 
@@ -23,11 +17,17 @@ Among William and Ann's children was Tristram (born July 13th, 1724; died May 14
 
 Their son, another William, had been born on June 4th, 1797, and died in Gwennap on February 28th, 1855. He was described as a farmer, but one suspects he was also involved in mining. His younger brother Tristram was the first member of the family to emigrate to Australia - presumably as a miner. William had married Mary Combellick (1795 or 1798-1879) and among their children was William, with whom this story began above. His early life as a coper miner and tin miner has already been mentioned, and three of his brothers and two of his sisters went to Australia.
 
+![The Grocery Shop - 'Trevilder' - John and Cyril Hurrell 1928](./william-bath/DSC00538.JPG)
+
 William's son Thomas (born 1852), died in Shingay-cum-Wendy, Cambridgeshire, 1936) lived at Tremear Farm, Pensilva, from the early 1870s. There he farmed 56 acres, and the vegetables he grew were sold in the family shop in Pensilva, run by his Mother in the early years. He also had a pedigree cow herd, and earned a bit of extra money carting stone. Thomas moved with his family after 1891 to Whitelands Farm near Chippenham in Wiltshire, and then to Cambridgeshire by the time of the 1901 census. He had married Mary Jane Delbridge (born 1850, died May 2nd, 1922), with whom he had nine chidren, all but two surviving to a good age. The two who died in infancy did so from scarlet fever. It appears Thomas and Mary were backed by the 6th Viscount Clifden and his wife Mary, of Lanhydrock. Thomas had apparently become friendly with Lord Clifden while at Tremear Farm. When Lord Clifden - who had moved from Cornwall to Wimpole Park, Cambridgeshire - heard that Thomas had also left Cornwall he wrote to him urging him to come to his area and rent one of his farms. He knew that Thomas was skilled in growing vegetables and thus suited to local growing conditions. There was a problem, however. Thomas had apparently only been in Whitelands Farm for two years, and considered he could not afford to move on so quickly. He wrote to Lord Clifden to that effect, who responded by offering a farm rent free for the first year. Thomas went up to Cambridgeshire to see Lord Clifden and was offered a farm rent free for a year as promised. Returning to Wiltshire, Thomas sold up his pedigree herd and other cattle and the family left to rent one of Lord Clifden's farms (Stratton Park family tradition has it, but this seems unlikely). It is certain that by 1901 they were at South Farm, Shingay, South-West Cambridgeshire.
 
 Of course, by this point Thomas and family were quite conversant with long-distance travel. The men (Thomas and his older sons) had taken their lengthy walk with a pedigree herd of cows, other cattle, horses, and wagons from Pensilva to Wiltshire. The eldest son, Charles, rode ahead on horseback to arrange with a co-operative farmer the renting of a field to feed and water the cattle overnight. The journey took them the whole of the month of March, but it is not clear whether this was in 1892 or somewhat later, and they did not travel on a Sunday. They had been well indoctrinated at the Bible Christian Society's Chapel in Pensilva, which William and Mary Jane had strongly supported. Mary Jane followed the menfolk to Chippenham by rail with daughters Emily and Louise, youngest son George, cats and dogs, and personal goods. On December 10th, 1924, Thomas Bath presented a new pipe organ to the Chapel in memory of his wife Mary Jane, who had in her turn had been "for many years a member of this Church". The organ then cost £385. The organ is now in St. Andrew's Church, Whitchurch, near Tavistock, having cost £35,000 to move.
 
+![William and Mary Bath's Headstone in Pensilva Cemetery](./william-bath/Bath_Pensilva_Cemetery.JPG)
+
 Thomas and Mary settled in to their new quarters quickly. Their son Charles had been born on February 18th, 1875, and died on February 29th, 1940. Their other surviving children were: Thomas (born 1876, died July 24th, 1965); William (born 1878, died February 29th, 1949); Emily (born June 26th, 1880, died June 26th, 1967) who married into the Parrish family of Wendy, near Shingay, where she had earlier lived at South Farm; Fred (born 1883, died June 16th, 1957), who married Florence and lived at Roxton Park Farm, Bedfordshire; [Maude] Louise (born August 8th, 1887; died April 11th, 1970) married into the Lee family, and she and Simeon settled at Dunton Farm, Bedfordshire; and George (born November 12th, 1891, died March 30th, 1973) who married Evelyn Retallick (born August 21st, 1893; died September 28th, 1975) and settled first at Havannah Farm, Sutton, Bedfordshire, before moving to Manor Farm, Hartford, Huntingdonshire.
+
+![Trevilder today.](./william-bath/DSC00540.JPG)
 
 The closest interest of the present generation of descendants is in the son of William Bath and Mary Jane Delbridge, Fred, represented by Simon Bath of Roxton Park Bedfordshire; Emily, from whom Caroline Jefferson of Melchbourne, Bedfordshire (nee Capon, her mother Jose Parrish having married Jim Capon of Broom, Bedfordshire) is descended; and Louise, who married Arthur Simeon Lee (1883-1953), a farmer of Church Farm, Dunton, from whom Gregory Smith of Wimpole is descended.
 

@@ -1,22 +1,33 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Layout from '../components/layout';
-import { graphql } from 'gatsby';
+import SEO from '../components/seo';
+import { graphql, Link } from 'gatsby';
 
-interface Image {
-	title: string;
-	path: string;
-}
 interface Person {
 	html: string;
 	frontmatter: {
 		title: string;
-		images: Image[];
 	};
 }
+
+interface PersonLink {
+	node: {
+		fields: {
+			slug: string;
+		};
+		frontmatter: {
+			title: string;
+		};
+	};
+}
+
 interface PersonTemplateProps {
 	data: {
-		markdownRemark: Person;
+		person: Person;
+		people: {
+			edges: PersonLink[];
+		};
 	};
 }
 
@@ -25,23 +36,36 @@ const PersonTemplate: React.FC<PersonTemplateProps> = ({
 }: PersonTemplateProps) => {
 	return (
 		<Layout>
+			<SEO title={data.person.frontmatter.title} />
 			<div className="row">
 				<div className="column">
 					<h1>
 						People:{' '}
-						<span className="subheader">
-							{data.markdownRemark.frontmatter.title}
-						</span>
+						<span className="subheader">{data.person.frontmatter.title}</span>
 					</h1>
 				</div>
 			</div>
 			<div className="row">
-				<div className="column">
-					<article
-						dangerouslySetInnerHTML={{
-							__html: data.markdownRemark.html
-						}}
-					/>
+				<div className="column large-8">
+					<hr />
+					<article dangerouslySetInnerHTML={{ __html: data.person.html }} />
+				</div>
+				<div className="column large-4">
+					<div className="panel">
+						<ul className="no-bullet">
+							<li key="home-page">
+								<Link to="/">Home Page</Link>
+							</li>
+							<hr />
+							{data.people.edges.map(person => (
+								<li key={person.node.fields.slug}>
+									<Link to={`/people/${person.node.fields.slug}`}>
+										{person.node.frontmatter.title}
+									</Link>
+								</li>
+							))}
+						</ul>
+					</div>
 				</div>
 			</div>
 		</Layout>
@@ -50,13 +74,27 @@ const PersonTemplate: React.FC<PersonTemplateProps> = ({
 
 export const query = graphql`
 	query($slug: String!) {
-		markdownRemark(fields: { slug: { eq: $slug }, type: { eq: "people" } }) {
+		person: markdownRemark(
+			fields: { slug: { eq: $slug }, type: { eq: "people" } }
+		) {
 			html
 			frontmatter {
 				title
-				images {
-					path
-					title
+			}
+		}
+		people: allMarkdownRemark(
+			filter: { fields: { type: { eq: "people" } } }
+			sort: { fields: [frontmatter___title], order: ASC }
+		) {
+			totalCount
+			edges {
+				node {
+					frontmatter {
+						title
+					}
+					fields {
+						slug
+					}
 				}
 			}
 		}

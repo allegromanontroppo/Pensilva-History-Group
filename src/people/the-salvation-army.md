@@ -1,13 +1,15 @@
 ---
 title: The Salvation Army
-images:
-  - path: Sally_Army_Hut_001.jpg
-  - path: Sally_Army_Hut_002.jpg
+preview: Sally_Army_Hut_001.jpg
 ---
+
+![The Salvation Army](./the-salvation-army/Sally_Army_Hut_001.jpg)
 
 The photographs show the Salvation Army Hut in Lower Middle Hill in Pensilva. As well as the Salvation Army the hut has accommodated the village Scout Troop. Lower Middle Hill is known locally by older residents of the village as 'Army Lane'. The following information was kindly provided by Rob Kinnon-Brettle of the Salvation Army Halls Archive:-
 
 "The Salvation Army started in Pensilva in 1883 and was the 479th Salvation Army Corps to be opened in England and Wales. In the 1891 census the quarters (the house where the Salvation Army officers lived) is given as 10 Bodminland, Pensilva.
+
+![The Salvation Army](./the-salvation-army/Sally_Army_Hut_002.jpg)
 
 OFFICERS STATIONED AT PENSILVA
 

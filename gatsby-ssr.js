@@ -5,3 +5,11 @@
  */
 
 // You can delete this file if you're not using it
+
+const React = require("react");
+
+export const onRenderBody = ({ setHeadComponents }, pluginOptions) => {
+  setHeadComponents([
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>,
+  ])
+}

@@ -1,17 +1,15 @@
 ---
 title: Do you recognise these cottages?
-images:
-  - path: History_002.jpg
-    title:
-  - path: emma_smith_brooks_tregilgas_pearce.jpg
-    title: Emma Smith Brooks Tregilgas Pearce
-  - path: john_tregilgas.jpg
-    title: John Tregilgas
-  - path: DSC00477.JPG
-    title: Could this be it?
+preview: History_002.jpg
 ---
 
 A lady from up-country has provided this photograph in the hope of finding out where the building is today.
+
+![Do you recognise these cottages?](./do-you-recognise-these-cottages/History_002.jpg)
+
+![Emma Smith Brooks Tregilgas Pearce](./do-you-recognise-these-cottages/emma_smith_brooks_tregilgas_pearce.jpg)
+
+![John Tregilgas](./do-you-recognise-these-cottages/john_tregilgas.jpg)
 
 It is somewhere in Pensilva and was occupied by one of the lady's ancestors an Emma Smith BROOKS who was born in Callington in 1854. According to census records Emma moved to Pensilva from Woolston between 1861 and 1871. She married John TREGILGAS in 1875 and lived in Pensilva until John's death in 1886.
 
@@ -24,6 +22,8 @@ If anyone knows where these cottages are now (probably well altered and hardly r
 ---
 
 The History Group has recently been contacted by Mr. Paul Tregilgas from Hamilton in New Zealand.
+
+![Could this be it?](./do-you-recognise-these-cottages/DSC00477.JPG)
 
 Paul is a descendant of Emma Smith Brooks and his great grandfather Eustace Tregilgas was the family member who emigrated to New Zealand.
 

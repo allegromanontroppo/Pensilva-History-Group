@@ -1,13 +1,11 @@
 ---
 title: My Life as a Rural Doctor's Wife over 3 Decades
-images:
-  - path: Jane_House2.jpg
-    title: The Old Parsonage, Pensilva
-  - path: Jane_Mann_s_House_and_East_Moor_008.jpg
-    title: The new house
+preview: Jane_House2.jpg
 ---
 
 The following talk was given by Jane Mann to the Pensilva History Group on Wednesday 28th November 2012. The full content of Jane's talk will be reproduced here by instalments over the next few weeks.
+
+![The Old Parsonage, Pensilva](./my-life-as-a-rural-doctors-wife-over-three-decades/Jane_House2.jpg)
 
 "I left school and went straight to Guy's Hospital in London to train as a nurse. I loved the training and eventually became State Registered and also acquired a hospital medal. For a short time I was a staff nurse on Theatres and then I was promoted to Theatre Sister. It was an exciting time as I was in the theatre when the first heart operation was performed. It was done by Sir Russell Brock and was on a blue baby.
 
@@ -34,6 +32,8 @@ The Old Parsonage has a large living room and at that time had a large open fire
 The kitchen had a coal fired Aga which horrified me at first and I begged for a proper oven as soon as possible but I very quickly became very fond of it and found it wonderful for baking and the slow oven was perfect for mutton and rice puddings and for keeping meals warm when mealtimes were delayed, which was often.
 
 The surgery was a converted barn. It consisted of a waiting room and the surgery with the dispensing done in the surgery and the patient's notes stored there too. There was also a, not very nice, outside toilet.
+
+![The new house](./my-life-as-a-rural-doctors-wife-over-three-decades/Jane_Mann_s_House_and_East_Moor_008.jpg)
 
 My husband had no other help but myself and I was on duty from the first day and always completely unpaid, although in the '80s there was a pension scheme started for Working Wives of General Practitioners, but that was after 20 years and nearly too late for me. I was happy to do this as a service to my community but did not realise that I would almost completely lose my freedom or how much it would affect my children as well, as I could not take them out for a walk or attend events at their school unless we were off duty. I had to answer the door bell and the telephone at all times as well as being general dogsbody, cleaning up messes, putting away patient's cards, helping with the dispensing and holding the fort while the doctor was out. We were on duty 24 hours a day with the exception of a half day on Wednesdays and alternate weekends from lunchtime on Saturday. At those times Bob Dyke would take over for emergencies and we were on duty for him on Thursday afternoons and alternate weekends.
 

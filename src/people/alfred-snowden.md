@@ -1,17 +1,19 @@
 ---
 title: Alfred Snowden
-images:
-  - path: SnowdenA1.jpg
-  - path: SnowdenA3.jpg
+preview: SnowdenA1.jpg
 ---
 
 The following article was received by email from Michael Key on 9th January 2013:-
 
 The following strange coincidence may be of interest.
 
+![Alfred Snowden](./alfred-snowden/SnowdenA1.jpg)
+
 Alfred Snowden who is commemorated on the St Ive/Pensilva war memorial was the grand uncle of my wife Dawn Key, nee Peters.
 
 Born in 1880 Alfred Snowden, a stonemason, was a son of John Thomas Snowden and Mary, nee Stephens who lived in Quarry Road, Pensilva. In 1916 at the age of 36 he joined the 10th Battalion of the [Duke of Cornwall's Light Infantry](http://www.1914-1918.net/dcli.htm). This was a service battalion known as the Cornwall Pioneers having been formed at Truro on 29th March 1916. On 20th June 1916 the battalion landed at Le Havre and was attached to the 2nd Division.
+
+![Alfred Snowden](./alfred-snowden/SnowdenA3.jpg)
 
 Just before the Germans' spring offensive in 1918, Alfred was killed on 15th February. The battalion war diary does not contain the circumstances of his death but from what is recorded we may deduce that he was one of three other ranks killed during an air-raid on their position at Equancourt. Alfred is buried at Manacourt in the [Rocquigny-Equnacourt Road British cemetery](http://www.cwgc.org/find-a-cemetery/cemetery/2000081/ROCQUIGNY-EQUANCOURT%20ROAD%20BRITISH%20CEMETERY,%20MANANCOURT).
 

@@ -1,12 +1,47 @@
 /* eslint-disable no-unused-vars */
 import * as React from 'react';
-import { Link } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Hero from '../components/hero';
 
-const IndexPage: React.FC = () => {
+interface PersonLink {
+	node: {
+		fields: {
+			slug: string;
+		};
+		frontmatter: {
+			title: string;
+		};
+	};
+}
+
+interface PlaceLink {
+	node: {
+		fields: {
+			slug: string;
+		};
+		frontmatter: {
+			title: string;
+		};
+	};
+}
+
+interface IndexPageProps {
+	data: {
+		people: {
+			totalCount: number;
+			edges: PersonLink[];
+		};
+		places: {
+			totalCount: number;
+			edges: PlaceLink[];
+		};
+	};
+}
+
+const IndexPage: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
 	return (
 		<>
 			<Hero />
@@ -59,8 +94,8 @@ const IndexPage: React.FC = () => {
 							/>
 						</div>
 					</article>
-					<aside className="column large-4">
-						<div className="panel radius">
+					<div className="column large-4">
+						<aside className="panel callout radius">
 							<h5>
 								From the Royal Cornwall Gazette, Falmouth Packet, Cornish Weekly
 								News and General Advertiser of Thursday, November 23, 1871.
@@ -72,12 +107,82 @@ const IndexPage: React.FC = () => {
 								begging in Ludgvan - and Major Trelawney has sent them to the
 								treadwheel for 14 days.
 							</blockquote>
+						</aside>
+
+						<ul className="tabs" data-tab>
+							<li className="tab-title active">
+								<a href="#places-panel">Places</a>
+							</li>
+							<li className="tab-title">
+								<a href="#people-panel">People</a>
+							</li>
+						</ul>
+						<div className="tabs-content">
+							<div className="content active" id="places-panel">
+								<ul className="no-bullet">
+									{data.places.edges.map(place => (
+										<li key={place.node.fields.slug}>
+											<Link to={`/places/${place.node.fields.slug}`}>
+												{place.node.frontmatter.title}
+											</Link>
+										</li>
+									))}
+								</ul>
+							</div>
+							<div className="content" id="people-panel">
+								<ul className="no-bullet">
+									{data.people.edges.map(person => (
+										<li key={person.node.fields.slug}>
+											<Link to={`/people/${person.node.fields.slug}`}>
+												{person.node.frontmatter.title}
+											</Link>
+										</li>
+									))}
+								</ul>
+							</div>
 						</div>
-					</aside>
+					</div>
 				</div>
 			</Layout>
 		</>
 	);
 };
+
+export const query = graphql`
+	query {
+		people: allMarkdownRemark(
+			filter: { fields: { type: { eq: "people" } } }
+			sort: { fields: [frontmatter___title], order: ASC }
+		) {
+			totalCount
+			edges {
+				node {
+					frontmatter {
+						title
+					}
+					fields {
+						slug
+					}
+				}
+			}
+		}
+		places: allMarkdownRemark(
+			filter: { fields: { type: { eq: "places" } } }
+			sort: { fields: [frontmatter___title], order: ASC }
+		) {
+			totalCount
+			edges {
+				node {
+					frontmatter {
+						title
+					}
+					fields {
+						slug
+					}
+				}
+			}
+		}
+	}
+`;
 
 export default IndexPage;

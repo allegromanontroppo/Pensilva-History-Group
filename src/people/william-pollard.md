@@ -1,11 +1,11 @@
 ---
 title: William Pollard
-images:
-  - path: 1.jpg
-    title: Woolston Cottage
+preview: 1.jpg
 ---
 
 William Pollard was born around 1776 in Menheniot. The 1856 Post Office Directory shows a William Pollard as "Farmer and Tax Collector of Woolston".
+
+![Woolston Cottage](./william-pollard/1.jpg)
 
 The census of 1841 shows his household as follows:
 

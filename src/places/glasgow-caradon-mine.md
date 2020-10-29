@@ -1,11 +1,12 @@
 ---
 title: Glasgow Caradon Mine
+preview: 010_tin_mine_-_cornwall.jpg
 location:
   lat: 50.5064
   long: -4.42275
-images:
-  - path: 010_tin_mine_-_cornwall.jpg
 ---
+
+![Glasgow Caradon Mine](./glasgow-caradon-mine/010_tin_mine_-_cornwall.jpg)
 
 This mine lay astride the granite/killas junction to the east of Caradon Hill just north of Pensilva which at that time was called Bodminland. Glasgow Caradon's name was derived from the city in which many of its investors lived, a long way from the Cornish moors on which they had gambled their money.
 

@@ -1,13 +1,9 @@
 ---
 title: Pensilva - A Brief History
-images:
-  - path: Jubilee_Farm_002.jpg
-    title: Jubilee Farm -
-  - path: Jubilee_Farm_004.jpg
-    title: Jubilee Farm - Remains of the old outside privy. -
-  - path: Jubilee_Farm_005.jpg
-    title: Jubilee Farm - The piggery
+preview: Jubilee_Farm_002.jpg
 ---
+
+![Jubilee Farm](./pensilva-a-brief-history/Jubilee_Farm_002.jpg)
 
 The census of 1841 records only two houses in Pensilva, a farmhouse (now called Jubilee Farm and situated on Jubilee Road) is the older of the two and was occupied by William Jory aged 46, a Farmer by occupation, his wife Martha aged 35, their three sons William, Thomas and Edward and their daughters Martha, Elizabeth and Jane. The other house is shown to be in Middlehill occupied by an agricultural labourer called John Squires, his wife Mary, his two sons George and Samuel, a girl of two years called Emma Harding and John and Mary's baby, Louisa aged 6 months.
 
@@ -15,9 +11,13 @@ The settlement at that time was called Bodminland. It was located on Silva Downs
 
 There has always been some form of mining in the area but the full industrial boom started in the early 1840s. A shanty town sprang up around Caradon Hill which was very soon replaced by the building of permanent houses and cottages. Huge numbers of workers from the mines needed accommodation and rows of cottages were built. It is likely the land was cheap and far enough away from the mining activity not to interfere with any possible mining expansion but near enough to easily walk to work.
 
+![Jubilee Farm - Remains of the old outside privy.](./pensilva-a-brief-history/Jubilee_Farm_004.jpg)
+
 It is likely that the majority of houses were built by speculative builders who then sold or rented them to the miners or, as in the case of Kleinfontein Terrace in Wesley Road, the mining companies themselves, in this case West Phoenix Mine, built accommodation for their higher status workers. The layout of the village, the grid of streets, plots of land and smallholdings would indicate the hand and eye of estate or land surveyors controlling the overall development. A number of the homes have small stone quarries nearby, the stone probably being used in the building of the houses rather than for commercial use.
 
 The growth rate in Bodminland at this time was extensive with over thirteen rows of cottages, as well as pairs of cottages and detached houses being constructed. By 1881 the population numbered 1360, of these 599 were children. Men over the age of 16 totalled 359 and no less than 271 of them were employed in mining, a further 40 between the ages of 14 and 16 were classified as 'men' and worked in the mines. The expanding population needed services and within a short space of time the school, public house - the Victoria Hotel, three chapels, a Sunday School, parsonage and post office had all been built within the heart of the village. Several of the houses were converted into shops including a grocers, drapers, confectioners, tobacconists, hardware, bootmaker and butchers.
+
+![Jubilee Farm - The piggery](./pensilva-a-brief-history/Jubilee_Farm_005.jpg)
 
 The original single farm had expanded and the census of 1881 records 9 farmers and 10 agricultural workers living in the settlement as well as a mason and carpenter. The cottages built in Middlehill had large gardens and land attached and the miners who lived there used the land as market gardens and kept poultry and livestock.
 

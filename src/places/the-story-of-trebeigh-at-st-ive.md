@@ -1,23 +1,15 @@
 ---
 title: The Story of Trebeigh at St Ive
-images:
-  - path: Hoose_002.jpg
-    title: Outbuilding
-  - path: Hoose_003.jpg
-    title: Old Part of Main House
-  - path: Hoose_004.jpg
-    title: Gable end and Buttress on right
-  - path: Hoose_005.jpg
-    title: Buttress Wall in SE corner
-  - path: Hoose_006.jpg
-    title: Tudor chimney on right
-  - path: Scan_20141003.png
-    title: Auction at Trebeigh 1846
+preview: Hoose_002.jpg
 ---
+
+![Outbuilding](./the-story-of-trebeigh-at-st-ive/Hoose_002.jpg)
 
 At the time of the Norman Conquest there was a farm in South East Cornwall with the Cornish name of "Trebighan", meaning 'Little Farm'. This farm was part of the estates of the Abbot of Tavistock and the tenant farmer was Oswulf.
 
 After William, Duke of Normandy, was crowned on Christmas Day 1066 he took all the land and distributed it amongst his own Norman knights. Trebighan was given to his half brother Robert, Count of Mortain.
+
+![Old Part of Main House](./the-story-of-trebeigh-at-st-ive/Hoose_003.jpg)
 
 The entry in the Domesday Book for Trebighan reads:
 
@@ -40,10 +32,18 @@ Queen Mary returned Trebigh to the Templars but Queen Elizabeth I finally abolis
 
 "Trebigh, the house and manor of William Wraye, priviledged with a large fraunchise"
 
+![Gable end and Buttress on right](./the-story-of-trebeigh-at-st-ive/Hoose_004.jpg)
+
 The Wrey family made Trebigh their home for about a hundred years. Then the heir married a young lady of the wealthy Bouchier family and they moved to her home at Tawstock near Barnstaple. The status of Trebeigh declined to that of a farm and was let to a succession of tenants for nearly 300 years. It was in 1960 that the farm was purchased by members of the Gillbard family from Sir Bouchier Wrey. These were the third generation of that family to have farmed it as tenants.
 
 The farm house still has a buttressed wall on the south east corner. The lintel of carved granite on the north west wall has designs resembling Maltese Crosses which have become weathered by time. The head of the front staircase is adorned with huge figured granite and the dog tooth pattern at the base suggests the Early English style of architecture. The windows at the front and back are Tudor design and the chimney wall hides a Tudor fireplace. This was uncovered in 1982 and revealed a hearth of enormous proportions complete with cloam oven and iron chimney bar. Upstairs is a small chamber, still with beams and plaster, hidden in a wall.
 
+![Buttress Wall in SE corner](./the-story-of-trebeigh-at-st-ive/Hoose_005.jpg)
+
 There are stories and traditions handed down - one that Church Park, the field immediately below the Church, must never be ploughed. Another says that a secret tunnel links Trebeigh to the Church. Locally Trebeigh is known as Trebeth, in the Cornish language this means 'the farm with a grave', thus giving credence to the story that Church Park is an old burial ground.
 
+![Tudor chimney on right](./the-story-of-trebeigh-at-st-ive/Hoose_006.jpg)
+
 Trebeigh lies sheltering in a valley with an abundant supply of water and surrounded by woods. It will outlive many newer properties, that's for sure, but its future will never match its past.
+
+![Auction at Trebeigh 1846](./the-story-of-trebeigh-at-st-ive/Scan_20141003.png)

@@ -1,13 +1,11 @@
 ---
 title: Emily Hobhouse
-images:
-  - path: EmilyHobhouse.jpg
-  - path: en-emily-hobhouse2.jpg
-  - path: Yvonne_s_Articles_003.jpg
-  - path: 944731_110211204142_X1657_RSA_3_Hobhouse.jpg
+preview: EmilyHobhouse.jpg
 ---
 
-The following article, written by J.S. Wenmoth, appeared in the Parish Pump some twenty or so years ago.\_
+The following article, written by J.S. Wenmoth, appeared in the Parish Pump some twenty or so years ago.
+
+![Emily Hobhouse](./emily-hobhouse/EmilyHobhouse.jpg)
 
 #### "A prophet is not without honour save in his own country".
 
@@ -34,6 +32,8 @@ The British now sent out thousands of troops and the siege of the three towns me
 
 The Boers who knew every inch of their country adopted guerrilla tactics, and with small mobile units constantly swooped on the British, causing considerable losses, and then rapidly disappeared. The British retaliated by burning down Boer homesteads. With their men fighting, the women and children were driven from their homes, and then watched as everything they had burnt to the ground.
 
+![Emily Hobhouse](./emily-hobhouse/en-emily-hobhouse2.jpg)
+
 Camps were formed, and the women and children were herded into these. Strands of barb-wire were put around an area, water if any, was an open stream. Rations were short, and conditions were too terrible to describe. Many children had only one garment, no shoes or stockings, and with the high temperatures by day and cold by night, and little protection, hundreds of children and some parents perished.
 
 Rumours were reaching this country of the conditions but the Government always said there was no cause for concern as everything possible was being done.
@@ -52,6 +52,8 @@ At heart she was a pacifist and she hated war, destruction and the suffering tha
 
 As her heart condition worsened, she lived in several places and death was finally a release.
 
+![Emily Hobhouse](./emily-hobhouse/Yvonne_s_Articles_003.jpg)
+
 On a memorial at Bloemfontein there are three names - Emily Hobhouse, [President Steyn](http://en.wikipedia.org/wiki/Martinus_Theunis_Steyn), [General de Wet](http://en.wikipedia.org/wiki/Christiaan_de_Wet).
 
 Perhaps [General Smuts](http://en.wikipedia.org/wiki/Jan_Smuts), a life-long friend, sums up her achievement in these few words:
@@ -61,6 +63,8 @@ Perhaps [General Smuts](http://en.wikipedia.org/wiki/Jan_Smuts), a life-long fri
 _The following Article appeared in The Western Morning News on Friday 3rd June 1994_
 
 ### Cornish 'Nightingale' will be remembered
+
+![Emily Hobhouse](./emily-hobhouse/944731_110211204142_X1657_RSA_3_Hobhouse.jpg)
 
 Just weeks after the rebirth of South Africa, Ambassador Kent Durr is visiting Cornwall to mark a link with one of his country's most remarkable women.
 

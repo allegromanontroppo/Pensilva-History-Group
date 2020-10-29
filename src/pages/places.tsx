@@ -29,7 +29,7 @@ interface PlacesPageProps {
 const PlacesPage: React.FC<PlacesPageProps> = ({ data }: PlacesPageProps) => {
 	return (
 		<Layout>
-			<SEO title="Place" />
+			<SEO title={`${data.places.totalCount} Places`} />
 			<div className="row">
 				<div className="column">
 					<h1>{data.places.totalCount} Places</h1>

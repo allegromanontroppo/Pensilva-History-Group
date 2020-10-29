@@ -8,12 +8,16 @@
 
 import './src/styles/application.scss';
 
-
-const jQuery = require('jquery/src/jquery');
-require('foundation-sites/js/foundation');
+import jQuery from 'jquery/src/jquery';
+import 'foundation-sites/js/foundation';
+import Chocolat from 'chocolat'
 
 export const onRouteUpdate = () => {
-  jQuery(function () {
-    jQuery(document).foundation();
+  jQuery(function ($) {
+    $(document).foundation();
+
+    Chocolat(document.querySelectorAll('.gatsby-resp-image-link'), {
+      loop: true,
+    });
   });
 };

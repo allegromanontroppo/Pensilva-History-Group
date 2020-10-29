@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Jongwoo Han <han980817@gmail.com>",
   "dependencies": {
+    "chocolat": "^1.0.3",
     "eslint-loader": "^3.0.4",
     "foundation-sites": "^5.5.3",
     "gatsby": "^2.24.91",

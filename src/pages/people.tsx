@@ -29,7 +29,7 @@ interface PeoplePageProps {
 const PeoplePage: React.FC<PeoplePageProps> = ({ data }: PeoplePageProps) => {
 	return (
 		<Layout>
-			<SEO title="People" />
+			<SEO title={`${data.people.totalCount} People`} />
 			<div className="row">
 				<div className="column">
 					<h1>{data.people.totalCount} People</h1>

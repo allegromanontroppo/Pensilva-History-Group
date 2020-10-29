@@ -82,10 +82,10 @@ const TopBar = ({ siteTitle }: TopBarProps) => {
 								))}
 							</ul>
 						</li>
-						<li className="has-dropdown">
+						{/* <li className="has-dropdown">
 							<Link to="/galleries">Galleries</Link>
 							<ul className="dropdown"></ul>
-						</li>
+						</li> */}
 					</ul>
 				</section>
 			</nav>

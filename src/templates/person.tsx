@@ -47,7 +47,6 @@ const PersonTemplate: React.FC<PersonTemplateProps> = ({
 			</div>
 			<div className="row">
 				<div className="column large-8">
-					<hr />
 					<article dangerouslySetInnerHTML={{ __html: data.person.html }} />
 				</div>
 				<div className="column large-4">

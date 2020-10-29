@@ -46,7 +46,7 @@ const TopBar = ({ siteTitle }: TopBarProps) => {
 	`);
 
 	return (
-		<div className="contain-to-grid show-for-large-up">
+		<div className="contain-to-grid show-for-medium-up">
 			<nav className="top-bar" data-topbar="" role="navigation">
 				<ul className="title-area">
 					<li className="name">

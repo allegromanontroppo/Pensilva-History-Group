@@ -13,37 +13,36 @@ import { useStaticQuery, graphql } from 'gatsby';
 import TopBar from './top-bar';
 
 const Layout: React.FC = ({ children }) => {
-	const { site } = useStaticQuery(graphql`
-		query {
-			site {
-				siteMetadata {
-					title
-					author
-				}
-			}
-		}
-	`);
+  const { site } = useStaticQuery(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          author
+        }
+      }
+    }
+  `);
 
-	return (
-		<>
-			<TopBar siteTitle={site.siteMetadata.title} />
-			<main>{children}</main>
-			<footer>
-				<div className="row">
-					<div className="column">
-						© {new Date().getFullYear()}. Built with
-						{` `}
-						<a href="https://www.gatsbyjs.org">Gatsby</a> by{' '}
-						{site.siteMetadata.author}
-					</div>
-				</div>
-			</footer>
-		</>
-	);
+  return (
+    <>
+      <TopBar siteTitle={site.siteMetadata.title} />
+      <main>{children}</main>
+      <footer>
+        <div className="row">
+          <div className="column">
+            © {new Date().getFullYear()}. Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a> by {site.siteMetadata.author}
+          </div>
+        </div>
+      </footer>
+    </>
+  );
 };
 
 Layout.propTypes = {
-	children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

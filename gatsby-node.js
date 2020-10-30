@@ -27,8 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const people = await graphql(`
     query {
-      allMarkdownRemark(
-        filter: { fields: { type: { eq: "people" } } }) {
+      allMarkdownRemark(filter: { fields: { type: { eq: "people" } } }) {
         edges {
           node {
             fields {
@@ -54,8 +53,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const places = await graphql(`
     query {
-      allMarkdownRemark (
-        filter: { fields: { type: { eq: "places" } } }) {
+      allMarkdownRemark(filter: { fields: { type: { eq: "places" } } }) {
         edges {
           node {
             fields {

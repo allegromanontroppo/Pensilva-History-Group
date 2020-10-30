@@ -10,10 +10,10 @@ import './src/styles/application.scss';
 
 import jQuery from 'jquery/src/jquery';
 import 'foundation-sites/js/foundation';
-import Chocolat from 'chocolat'
+import Chocolat from 'chocolat';
 
 export const onRouteUpdate = () => {
-  jQuery(function ($) {
+  jQuery(function($) {
     $(document).foundation();
 
     Chocolat(document.querySelectorAll('.gatsby-resp-image-link'), {

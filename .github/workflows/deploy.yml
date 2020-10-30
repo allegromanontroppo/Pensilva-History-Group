@@ -19,8 +19,8 @@ jobs:
         run: npm run lint
       - name: Format
         run: npm run format
-      - name: Unit test
-        run: npm test
+      # - name: Unit test
+      #   run: npm test
       - name: Run npm build
         run: npm run build
       - name: Default deploy

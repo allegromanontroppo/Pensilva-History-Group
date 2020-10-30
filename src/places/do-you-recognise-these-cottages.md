@@ -1,6 +1,5 @@
 ---
 title: Do you recognise these cottages?
-preview: History_002.jpg
 ---
 
 A lady from up-country has provided this photograph in the hope of finding out where the building is today.

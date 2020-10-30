@@ -1,6 +1,5 @@
 ---
 title: Visiting the Cemetery
-preview: Yvonne_s_Articles_004.jpg
 ---
 
 The following article written in 1984 is reproduced by kind permission of Yvonne Gilbert

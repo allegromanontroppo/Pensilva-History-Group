@@ -1,6 +1,5 @@
 ---
 title: Jubilee Farm
-preview: Jubilee_Farm_001.jpg
 ---
 
 The census of 1841 shows just one house and one family living in Pensilva or 'Bodmonland' as it was called at that time. The house was what is now Jubilee Farm and the family were a farmer called William Jory, his wife Martha and their three sons and three daughters.

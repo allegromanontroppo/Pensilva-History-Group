@@ -1,6 +1,5 @@
 ---
 title: My House in Middle Hill
-preview: P1010498.JPG
 ---
 
 I live in a cottage which is one of a small terrace in Lower Middle Hill, Pensilva. It was built, I believe around 1850 at the start of the mining boom on Caradon Hill but I cannot find out the exact date.

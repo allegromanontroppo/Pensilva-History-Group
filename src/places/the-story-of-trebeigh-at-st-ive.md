@@ -1,6 +1,5 @@
 ---
 title: The Story of Trebeigh at St Ive
-preview: Hoose_002.jpg
 ---
 
 ![Outbuilding](./the-story-of-trebeigh-at-st-ive/Hoose_002.jpg)

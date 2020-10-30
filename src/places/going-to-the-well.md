@@ -1,6 +1,5 @@
 ---
 title: Going to the Well
-preview: Yvonne_s_Articles_002-_cornwall.jpg
 ---
 
 The following article written in 1984 is reproduced by kind permission of Yvonne Gilbert.

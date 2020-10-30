@@ -1,6 +1,5 @@
 ---
 title: S.S. PENSILVA
-preview: SS_Pensilva_006.jpg
 ---
 
 Although the use of the name 'Pensilva' does not appear till the 1891 census, and then only as Pensilva or Bodminland, it has managed to have two ships named after it.

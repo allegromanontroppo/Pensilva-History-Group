@@ -1,6 +1,5 @@
 ---
 title: Pensilva and St Ive Schools
-preview: StIveSchool.JPG
 ---
 
 The History Group was very pleased to receive these photos from Ian Titchner of Pensilva. He had spotted this unusual old postcard for sale on E-Bay and asked if there was actually ever a school in St Ive. The History Group are again indebted to Yvonne Gilbert for the following information:-

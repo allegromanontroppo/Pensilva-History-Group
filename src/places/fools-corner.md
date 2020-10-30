@@ -1,6 +1,5 @@
 ---
 title: Fool's Corner
-preview: Yvonne_s_Articles_001.jpg
 ---
 
 The following article written in 1984 is reproduced by kind permission of Yvonne Gilbert.

@@ -1,6 +1,5 @@
 ---
 title: The Cornish Penny
-preview: Cornish_Penny_001.jpg
 ---
 
 Cornish currency has been issued in various forms since medieval times and possibly earlier. One early story tells that the Cornish people raised the money by popular subscription to pay a ransom for the release of the Duke of Cornwall, Richard the Lionheart, during the Crusades. The 15 Gold Bezants on the arms of the Duke of Cornwall are said to represent the money raised.

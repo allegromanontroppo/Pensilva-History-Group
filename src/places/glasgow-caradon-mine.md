@@ -1,6 +1,5 @@
 ---
 title: Glasgow Caradon Mine
-preview: 010_tin_mine_-_cornwall.jpg
 location:
   lat: 50.5064
   long: -4.42275

@@ -1,6 +1,5 @@
 ---
 title: Pensilva - A Brief History
-preview: Jubilee_Farm_002.jpg
 ---
 
 ![Jubilee Farm](./pensilva-a-brief-history/Jubilee_Farm_002.jpg)

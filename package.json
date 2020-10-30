@@ -9,6 +9,7 @@
     "eslint-loader": "^3.0.4",
     "foundation-sites": "^5.5.3",
     "gatsby": "^2.24.91",
+    "gatsby-background-image": "^1.1.2",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-offline": "^3.0.32",

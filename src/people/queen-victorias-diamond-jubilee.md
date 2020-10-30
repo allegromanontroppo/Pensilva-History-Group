@@ -1,12 +1,12 @@
 ---
 title: Queen Victoria's Diamond Jubilee
-images:
-  - path: Queen-Victoria-Official-DJ-Portrait-SM_0.jpg
 ---
 
 The following article has been written and researched by Sandra Pearson, Secretary of the Pensilva History Group:-
 
 Here is a flavour of how Pensilva and St Ive celebrated the Diamond Jubilee of Queen Victoria on 22nd June 1897.
+
+![Queen Victoria's Diamond Jubilee](./queen-victorias-diamond-jubilee/Queen-Victoria-Official-DJ-Portrait-SM_0.jpg)
 
 Transcription from the Cornish Times of June 26th 1897:
 

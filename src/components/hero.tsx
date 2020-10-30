@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
 			}
 			placeholderImage: file(relativePath: { eq: "engine-house.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 1500) {
+					fluid(maxWidth: 1400) {
 						...GatsbyImageSharpFluid
 					}
 				}

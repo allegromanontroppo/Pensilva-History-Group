@@ -1,6 +1,8 @@
 ---
 title: Memories of St Ive Village
----The following memories of the village have kindly been provided by Dennis and Doreen Cardew of St Ive.
+---
+
+The following memories of the village have kindly been provided by Dennis and Doreen Cardew of St Ive.
 
 Dennis Cardew Memories from 1935 to 1950s
 

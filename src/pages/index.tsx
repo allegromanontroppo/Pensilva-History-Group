@@ -66,11 +66,11 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
               the website will become interactive and would encourage any comments or information from anyone who has
               any historical information about our area.
             </p>
-            <p>
+            {/* <p>
               We would love to hear about your house, your Cornish ancestors, your memories of the area and your
               stories. Please feel free to use the <Link to="/contact-us">Contact Us</Link> facility - we will get back
               to you.
-            </p>
+            </p> */}
             <p>
               Throughout the year we hold various events and have talks on different aspects of the area. Details are
               usually published in the Parish Pump.

@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9c91cff5-6fc6-465e-8bd8-614f8cccfdef/deploy-status)](https://app.netlify.com/sites/pensilva-history-group/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9c91cff5-6fc6-465e-8bd8-614f8cccfdef/deploy-status)](https://app.netlify.com/sites/pensilva-history-group/deploys) https://pensilva-history-group.netlify.app/
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">

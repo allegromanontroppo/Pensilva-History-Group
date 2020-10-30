@@ -3,6 +3,7 @@ import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 
+import OffCanvas from '../components/off-canvas';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -50,40 +51,56 @@ const previewImage = (slug: string, previews: Preview[]) => {
 
 const PeoplePage: React.FC<PeoplePageProps> = ({ data }: PeoplePageProps) => {
 	return (
-		<Layout>
-			<SEO title={`${data.people.totalCount} People`} />
-			<div className="row">
-				<div className="column">
-					<h1>{data.people.totalCount} People</h1>
+		<OffCanvas>
+			<Layout>
+				<SEO title={`${data.people.totalCount} People`} />
+				<div className="row">
+					<div className="column">
+						<h1>{data.people.totalCount} People</h1>
+					</div>
 				</div>
-			</div>
-			{data.people.edges.map(person => {
-				const preview = previewImage(
-					person.node.fields.slug,
-					data.previews.edges
-				);
+				{data.people.edges.map(person => {
+					const preview = previewImage(
+						person.node.fields.slug,
+						data.previews.edges
+					);
 
-				return (
-					<div className="row" key={person.node.fields.slug}>
-						<div className="column">
-							<hr />
-							<h1>
-								<Link to={`/people/${person.node.fields.slug}`}>
-									{person.node.frontmatter.title}
-								</Link>
-							</h1>
-							<div className="row">
-								{preview ? (
-									<>
-										<div className="column medium-4 large-3">
-											<Link
-												to={`/people/${person.node.fields.slug}`}
-												className=""
-											>
-												<Img fluid={preview.fluid} />
-											</Link>
-										</div>
-										<div className="column medium-8 large-9">
+					return (
+						<div className="row" key={person.node.fields.slug}>
+							<div className="column">
+								<hr />
+								<h1>
+									<Link to={`/people/${person.node.fields.slug}`}>
+										{person.node.frontmatter.title}
+									</Link>
+								</h1>
+								<div className="row">
+									{preview ? (
+										<>
+											<div className="column medium-4 large-3">
+												<Link
+													to={`/people/${person.node.fields.slug}`}
+													className=""
+												>
+													<Img fluid={preview.fluid} />
+												</Link>
+											</div>
+											<div className="column medium-8 large-9">
+												<div
+													dangerouslySetInnerHTML={{
+														__html: person.node.excerpt
+													}}
+												/>
+												<Link
+													to={`/people/${person.node.fields.slug}`}
+													className="button tiny radius"
+												>
+													View
+												</Link>
+											</div>
+										</>
+									) : (
+										<div className="column">
 											<div
 												dangerouslySetInnerHTML={{
 													__html: person.node.excerpt
@@ -96,26 +113,14 @@ const PeoplePage: React.FC<PeoplePageProps> = ({ data }: PeoplePageProps) => {
 												View
 											</Link>
 										</div>
-									</>
-								) : (
-									<div className="column">
-										<div
-											dangerouslySetInnerHTML={{ __html: person.node.excerpt }}
-										/>
-										<Link
-											to={`/people/${person.node.fields.slug}`}
-											className="button tiny radius"
-										>
-											View
-										</Link>
-									</div>
-								)}
+									)}
+								</div>
 							</div>
 						</div>
-					</div>
-				);
-			})}
-		</Layout>
+					);
+				})}
+			</Layout>
+		</OffCanvas>
 	);
 };
 

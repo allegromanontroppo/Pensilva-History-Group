@@ -2,6 +2,7 @@
 import * as React from 'react';
 import { graphql, Link } from 'gatsby';
 
+import OffCanvas from '../components/off-canvas';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import Hero from '../components/hero';
@@ -43,7 +44,7 @@ interface IndexPageProps {
 
 const IndexPage: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
 	return (
-		<>
+		<OffCanvas>
 			<Hero />
 			<Layout>
 				<SEO title="Home" />
@@ -144,7 +145,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }: IndexPageProps) => {
 					</div>
 				</div>
 			</Layout>
-		</>
+		</OffCanvas>
 	);
 };
 

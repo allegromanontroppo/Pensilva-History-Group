@@ -73,7 +73,7 @@ const PlacesPage: React.FC<PlacesPageProps> = ({ data }: PlacesPageProps) => {
 								</Link>
 							</h1>
 							<div className="row">
-								{place.node.frontmatter.preview ? (
+								{preview ? (
 									<>
 										<div className="column medium-4 large-3">
 											<Link

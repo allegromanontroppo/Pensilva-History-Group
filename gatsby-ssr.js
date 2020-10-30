@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
  *

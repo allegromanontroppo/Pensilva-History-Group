@@ -9,6 +9,38 @@ module.exports = {
     'gatsby-plugin-eslint',
     'gatsby-plugin-typescript',
     'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true, // Print removed selectors and processed file names
+        printAll: true,
+        develop: true, // Enable while using `gatsby develop`
+        ignore: ['chocolat.css'],
+        whitelist: [
+          'foundation-mq-small',
+          'foundation-mq-small-only',
+          'foundation-mq-medium',
+          'foundation-mq-medium-only',
+          'foundation-mq-large',
+          'foundation-mq-large-only',
+          'foundation-mq-xlarge',
+          'foundation-mq-xlarge-only',
+          'foundation-mq-xxlarge',
+          'foundation-data-attribute-namespace',
+          'js-generated',
+          'parent-link',
+          'back',
+          'title',
+          'not-click',
+          'move-right',
+          'exit-off-canvas',
+        ], // Don't remove this selector
+        // tailwind: true, // Enable tailwindcss support
+        // whitelist: ['whitelist'], // Don't remove this selector
+        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-source-filesystem',

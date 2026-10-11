@@ -10,30 +10,31 @@ interface Props {
   description?: string;
   transparentHeader?: boolean;
   type?: 'website' | 'article';
+  image?: string;
+  structuredData?: Record<string, unknown>;
 }
 const {
   title,
   description = 'The digital archive of Pensilva History Group: people, places, mines, photographs and memories from Pensilva and St Ive in east Cornwall.',
   transparentHeader = false,
   type = 'website',
+  image,
+  structuredData,
 } = Astro.props;
 const siteName = 'Pensilva History Group';
 const pageTitle = title ? `${title} · ${siteName}` : `${siteName} · Pensilva & St Ive history`;
 const siteUrl = Astro.site ?? new URL(Astro.url.origin);
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 const rootUrl = siteUrl.toString().replace(/\/$/, '');
-const structuredData = {
+const socialImage = image ? new URL(image, siteUrl).toString() : undefined;
+const websiteData = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: siteName,
   url: rootUrl,
-  description,
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${rootUrl}/search/?q={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
+  description: 'The digital archive of the Pensilva History Group.',
 };
+const schema = structuredData ? [websiteData, structuredData] : websiteData;
 ---
 <!doctype html>
 <html lang="en">
@@ -48,8 +49,11 @@ const structuredData = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonical} />
-    <meta name="twitter:card" content="summary" />
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    {socialImage && <meta property="og:image" content={socialImage} />}
+    {socialImage && <meta property="og:image:alt" content={title ?? siteName} />}
+    <meta name="twitter:card" content={socialImage ? 'summary_large_image' : 'summary'} />
+    {socialImage && <meta name="twitter:image" content={socialImage} />}
+    <script type="application/ld+json" set:html={JSON.stringify(schema)}></script>
     <title>{pageTitle}</title>
   </head>
   <body id="top">

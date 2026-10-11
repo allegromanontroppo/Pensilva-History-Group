@@ -7,6 +7,7 @@ import '../styles/lightbox.css';
 
 interface Props {
   title?: string;
+  seoTitle?: string;
   description?: string;
   transparentHeader?: boolean;
   type?: 'website' | 'article';
@@ -15,6 +16,7 @@ interface Props {
 }
 const {
   title,
+  seoTitle,
   description = 'A digital archive of people, places, mines, photographs and memories from Pensilva and St Ive in east Cornwall.',
   transparentHeader = false,
   type = 'website',
@@ -22,7 +24,7 @@ const {
   structuredData,
 } = Astro.props;
 const siteName = 'Pensilva History';
-const pageTitle = title ? `${title} · ${siteName}` : `${siteName} · Pensilva & St Ive archive`;
+const pageTitle = seoTitle ?? (title ? `${title} · ${siteName}` : `${siteName} · Pensilva & St Ive archive`);
 const siteUrl = Astro.site ?? new URL(Astro.url.origin);
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 const rootUrl = siteUrl.toString().replace(/\/$/, '');

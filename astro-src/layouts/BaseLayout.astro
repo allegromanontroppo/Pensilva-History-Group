@@ -1,0 +1,55 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SkipLink from '../components/SkipLink.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  transparentHeader?: boolean;
+  type?: 'website' | 'article';
+}
+const {
+  title,
+  description = 'The digital archive of Pensilva History Group: people, places, mines, photographs and memories from Pensilva and St Ive in east Cornwall.',
+  transparentHeader = false,
+  type = 'website',
+} = Astro.props;
+const siteName = 'Pensilva History Group';
+const pageTitle = title ? `${title} · ${siteName}` : `${siteName} · Pensilva & St Ive history`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).toString();
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#183038" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <title>{pageTitle}</title>
+  </head>
+  <body id="top">
+    <SkipLink />
+    <SiteHeader transparent={transparentHeader} />
+    <main id="main-content"><slot /></main>
+    <footer class="site-footer">
+      <div class="shell footer-grid">
+        <div>
+          <a class="footer-mark" href="/">Pensilva History Group</a>
+          <p>Studying and recording the industrial and social history of Pensilva and the Parish of St Ive.</p>
+        </div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="/topics/">Subjects</a><a href="/archive/">Archive</a><a href="/search/">Search</a>
+        </nav>
+      </div>
+      <div class="shell footer-small">Community archive · Pensilva & St Ive, Cornwall</div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+---
+import type { ArchiveEntry } from '../lib/archive';
+import ArchiveCard from './ArchiveCard.astro';
+import { topicsFor } from '../lib/taxonomy';
+
+interface Props { current: ArchiveEntry; entries: ArchiveEntry[] }
+const { current, entries } = Astro.props;
+const currentTopics = new Set(topicsFor(current).map(topic => topic.slug));
+const related = entries
+  .filter(entry => !(entry.collection === current.collection && entry.id === current.id))
+  .map(entry => ({ entry, score: topicsFor(entry).filter(topic => currentTopics.has(topic.slug)).length }))
+  .filter(item => item.score > 0)
+  .sort((a, b) => b.score - a.score || a.entry.data.title.localeCompare(b.entry.data.title))
+  .slice(0, 3)
+  .map(item => item.entry);
+---
+{related.length > 0 && (
+  <section class="related-section">
+    <div class="shell">
+      <div class="section-heading section-heading--compact"><div><p class="eyebrow">Keep exploring</p><h2>Related stories</h2></div></div>
+      <div class="image-card-grid image-card-grid--three">{related.map(entry => <ArchiveCard entry={entry} />)}</div>
+    </div>
+  </section>
+)}

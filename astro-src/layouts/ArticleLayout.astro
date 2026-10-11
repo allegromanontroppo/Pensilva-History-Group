@@ -1,0 +1,42 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import TopicChips from '../components/TopicChips.astro';
+import CurrentContext from '../components/CurrentContext.astro';
+import RelatedStories from '../components/RelatedStories.astro';
+import BackToTop from '../components/BackToTop.astro';
+import type { ArchiveEntry } from '../lib/archive';
+import { archiveLabel, excerpt } from '../lib/archive';
+
+interface Props { entry: ArchiveEntry; allEntries: ArchiveEntry[] }
+const { entry, allEntries } = Astro.props;
+const kindTitle = archiveLabel(entry.collection);
+const isEmily = entry.collection === 'people' && entry.id === 'emily-hobhouse';
+const longForm = entry.body.length > 14000;
+const description = excerpt(entry.body, 165);
+---
+<BaseLayout title={entry.data.title} description={description} type="article">
+  <section class="article-masthead">
+    <div class="shell article-heading">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href={`/${entry.collection}/`}>{kindTitle}</a></nav>
+      <p class="eyebrow">{kindTitle}</p>
+      <h1>{entry.data.title}</h1>
+      <TopicChips entry={entry} />
+    </div>
+  </section>
+  <div class="shell article-grid">
+    <article class:list={['prose', { 'prose--long': longForm }]}>
+      {longForm && <div class="long-read-note"><strong>Reference page</strong><span>This is one of the archive's longer records. Your browser's Find command can help locate a name.</span></div>}
+      <slot />
+      {longForm && <BackToTop />}
+    </article>
+    <aside class="article-aside">
+      <div class="aside-panel">
+        <p class="aside-label">From the archive</p>
+        <p>The original Pensilva History Group article is preserved here with its photographs and wording.</p>
+        <a href="/archive/">Browse all stories →</a>
+      </div>
+      {isEmily && <CurrentContext />}
+    </aside>
+  </div>
+  <RelatedStories current={entry} entries={allEntries} />
+</BaseLayout>

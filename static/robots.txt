@@ -1,4 +1,51 @@
+# Pensilva History crawler and content-use policy
+#
+# Ordinary search indexing, links and short reference excerpts are welcome.
+# Use of protected material for AI model training or fine-tuning is not permitted.
+# Full-content reproduction is not permitted; reference-level use is preferred.
+# Rights are reserved where applicable, including for text and data mining.
+
 User-agent: *
 Allow: /
+Content-Signal: search=yes, ai-train=no, use=reference
+Content-Usage: train-ai=n
+
+# OpenAI training crawler. OAI-SearchBot remains allowed via the general rule above.
+User-agent: GPTBot
+Disallow: /
+
+# Anthropic model-training crawler. Claude search/user-initiated access is not blocked here.
+User-agent: ClaudeBot
+Disallow: /
+
+# Legacy Anthropic crawler tokens retained defensively.
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+# Google AI training/grounding control token; this does not block Google Search.
+User-agent: Google-Extended
+Disallow: /
+
+# Apple foundation-model training control token; ordinary Applebot discovery remains allowed.
+User-agent: Applebot-Extended
+Disallow: /
+
+# Common Crawl dataset crawler.
+User-agent: CCBot
+Disallow: /
+
+# Perplexity automated crawler.
+User-agent: PerplexityBot
+Disallow: /
+
+# Additional dataset / model-development crawlers.
+User-agent: Bytespider
+Disallow: /
+
+User-agent: cohere-ai
+Disallow: /
 
 Sitemap: https://pensilva-history-group.netlify.app/sitemap.xml

@@ -1,9 +1,12 @@
 <dialog id="image-lightbox" class="image-lightbox" aria-label="Enlarged archive photograph">
   <button class="image-lightbox-close" type="button" aria-label="Close enlarged image">×</button>
+  <button class="image-lightbox-nav image-lightbox-prev" type="button" aria-label="Previous image">←</button>
   <figure>
     <img src="" alt="" />
     <figcaption hidden></figcaption>
   </figure>
+  <button class="image-lightbox-nav image-lightbox-next" type="button" aria-label="Next image">→</button>
+  <div class="image-lightbox-counter" aria-live="polite"></div>
 </dialog>
 
 <script>
@@ -11,21 +14,56 @@
   const largeImage = dialog?.querySelector('img');
   const caption = dialog?.querySelector('figcaption');
   const closeButton = dialog?.querySelector('.image-lightbox-close');
+  const previousButton = dialog?.querySelector('.image-lightbox-prev');
+  const nextButton = dialog?.querySelector('.image-lightbox-next');
+  const counter = dialog?.querySelector('.image-lightbox-counter');
+  const images = [...document.querySelectorAll('.prose img, .photo-grid img')].filter(image => image instanceof HTMLImageElement);
+  let currentIndex = -1;
+  let returnFocus = null;
 
-  function openImage(image) {
-    if (!(dialog instanceof HTMLDialogElement) || !(largeImage instanceof HTMLImageElement)) return;
+  function captionFor(image) {
+    const figureCaption = image.closest('figure')?.querySelector('figcaption')?.textContent?.trim();
+    return figureCaption || image.alt || '';
+  }
+
+  function showImage(index) {
+    if (!(largeImage instanceof HTMLImageElement) || images.length === 0) return;
+    currentIndex = (index + images.length) % images.length;
+    const image = images[currentIndex];
+    const imageCaption = captionFor(image);
+
     largeImage.src = image.currentSrc || image.src;
     largeImage.alt = image.alt || '';
+
     if (caption instanceof HTMLElement) {
-      caption.textContent = image.alt || '';
-      caption.hidden = !image.alt;
+      caption.textContent = imageCaption;
+      caption.hidden = !imageCaption;
     }
-    dialog.showModal();
+    if (counter instanceof HTMLElement) {
+      counter.textContent = images.length > 1 ? `${currentIndex + 1} / ${images.length}` : '';
+    }
+
+    const multiple = images.length > 1;
+    if (previousButton instanceof HTMLButtonElement) previousButton.hidden = !multiple;
+    if (nextButton instanceof HTMLButtonElement) nextButton.hidden = !multiple;
+  }
+
+  function openImage(image) {
+    if (!(dialog instanceof HTMLDialogElement)) return;
+    const index = images.indexOf(image);
+    if (index < 0) return;
+    returnFocus = image;
+    showImage(index);
+    if (!dialog.open) dialog.showModal();
     closeButton?.focus();
   }
 
-  document.querySelectorAll('.prose img, .photo-grid img').forEach(image => {
-    if (!(image instanceof HTMLImageElement)) return;
+  function move(delta) {
+    if (!(dialog instanceof HTMLDialogElement) || !dialog.open || images.length < 2) return;
+    showImage(currentIndex + delta);
+  }
+
+  images.forEach(image => {
     image.classList.add('zoomable-image');
     image.tabIndex = 0;
     image.setAttribute('role', 'button');
@@ -39,11 +77,35 @@
     });
   });
 
+  previousButton?.addEventListener('click', () => move(-1));
+  nextButton?.addEventListener('click', () => move(1));
+
   closeButton?.addEventListener('click', () => {
     if (dialog instanceof HTMLDialogElement) dialog.close();
   });
 
+  dialog?.addEventListener('keydown', event => {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      move(-1);
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      move(1);
+    } else if (event.key === 'Home' && images.length > 1) {
+      event.preventDefault();
+      showImage(0);
+    } else if (event.key === 'End' && images.length > 1) {
+      event.preventDefault();
+      showImage(images.length - 1);
+    }
+  });
+
   dialog?.addEventListener('click', event => {
     if (event.target === dialog && dialog instanceof HTMLDialogElement) dialog.close();
+  });
+
+  dialog?.addEventListener('close', () => {
+    if (returnFocus instanceof HTMLElement) returnFocus.focus();
+    returnFocus = null;
   });
 </script>

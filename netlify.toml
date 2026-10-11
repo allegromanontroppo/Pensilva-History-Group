@@ -15,3 +15,8 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Robots-Tag = "noai, noimageai"
+    TDM-Reservation = "1"
+    TDM-Policy = "https://pensilva-history-group.netlify.app/rights/"
+    Content-Usage = "train-ai=n"
+    Content-Signal = "search=yes, ai-train=no, use=reference"

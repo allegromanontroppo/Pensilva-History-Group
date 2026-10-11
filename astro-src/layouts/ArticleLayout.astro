@@ -4,6 +4,7 @@ import TopicChips from '../components/TopicChips.astro';
 import CurrentContext from '../components/CurrentContext.astro';
 import RelatedStories from '../components/RelatedStories.astro';
 import BackToTop from '../components/BackToTop.astro';
+import LongPageNav from '../components/LongPageNav.astro';
 import type { ArchiveEntry } from '../lib/archive';
 import { archiveLabel, excerpt } from '../lib/archive';
 import { previewImage } from '../lib/images';
@@ -52,6 +53,7 @@ const articleData = {
         <p>The original Pensilva History Group article is preserved here with its photographs and wording.</p>
         <a href="/archive/">Browse all stories →</a>
       </div>
+      {longForm && <LongPageNav />}
       {isEmily && <CurrentContext />}
       {isResearchHub && <div class="current-context"><p class="eyebrow">Archive note</p><h2>Published material</h2><p>This article describes the Research Hub as it operated when the piece was written. Some facilities, opening arrangements and contact details may have changed since then; the original article is preserved unchanged.</p></div>}
     </aside>

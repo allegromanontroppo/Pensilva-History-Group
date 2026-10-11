@@ -1,4 +1,9 @@
 # Spawning ai.txt training opt-out
+#
+# This file expresses a model-training and dataset-ingestion opt-out only.
+# It is not a search-indexing restriction: search, linking, citation and
+# user-directed AI retrieval are welcome.
+#
 # Pensilva History does not permit protected site material to be used for
 # commercial AI model training or dataset construction without permission.
 # Public-domain and third-party material retain their existing legal status.

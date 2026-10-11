@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArchiveCard from '../components/ArchiveCard.astro';
+import type { ArchiveEntry } from '../lib/archive';
+import { alphabetical } from '../lib/archive';
+import { topics, topicsFor } from '../lib/taxonomy';
+const entries = alphabetical([...(await getCollection('people')), ...(await getCollection('places'))] as ArchiveEntry[]);
+---
+<BaseLayout title="Archive" description="Browse all stories in the Pensilva History Group archive.">
+  <section class="listing-masthead listing-masthead--archive"><div class="shell"><p class="eyebrow">The complete collection</p><h1>Archive</h1><div class="listing-intro-row"><p class="listing-lede">{entries.length} stories preserving local research, photographs, memories and records from Pensilva and St Ive.</p><a class="button" href="/search/">Search all text</a></div></div></section>
+  <section class="filter-bar"><div class="shell filter-inner"><span>Filter by subject</span><div class="filter-buttons"><button class="is-active" type="button" data-topic="all">All</button>{topics.map(topic => <button type="button" data-topic={topic.slug}>{topic.label}</button>)}</div><p id="filter-status" aria-live="polite">Showing all {entries.length} stories.</p></div></section>
+  <section class="section-pad"><div id="archive-results" class="shell image-card-grid">{entries.map(entry => <div class="filter-item" data-topics={topicsFor(entry).map(topic => topic.slug).join(' ')}><ArchiveCard entry={entry} /></div>)}</div></section>
+  <script>
+    const buttons = [...document.querySelectorAll<HTMLButtonElement>('[data-topic]')];
+    const items = [...document.querySelectorAll<HTMLElement>('.filter-item')];
+    const status = document.querySelector<HTMLElement>('#filter-status');
+    buttons.forEach(button => button.addEventListener('click', () => {
+      const topic = button.dataset.topic || 'all';
+      buttons.forEach(item => item.classList.toggle('is-active', item === button));
+      let shown = 0;
+      items.forEach(item => {
+        const visible = topic === 'all' || (item.dataset.topics || '').split(' ').includes(topic);
+        item.hidden = !visible;
+        if (visible) shown += 1;
+      });
+      if (status) status.textContent = `Showing ${shown} ${shown === 1 ? 'story' : 'stories'}.`;
+    }));
+  </script>
+</BaseLayout>

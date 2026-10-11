@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArchiveCard from '../../components/ArchiveCard.astro';
+import type { ArchiveEntry } from '../../lib/archive';
+import { alphabetical } from '../../lib/archive';
+const entries = alphabetical((await getCollection('places')) as ArchiveEntry[]);
+---
+<BaseLayout title="Places & landscape"><section class="listing-masthead"><div class="shell"><p class="eyebrow">{entries.length} archive stories</p><h1>Places & landscape</h1><p class="listing-lede">Mines, houses, farms, schools and landmarks across Pensilva, St Ive and the surrounding landscape.</p></div></section><section class="section-pad"><div class="shell image-card-grid">{entries.map(entry => <ArchiveCard entry={entry} />)}</div></section></BaseLayout>

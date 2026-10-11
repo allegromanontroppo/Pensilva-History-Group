@@ -1,0 +1,10 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import type { ArchiveEntry } from '../../lib/archive';
+export async function getStaticPaths() { const entries = await getCollection('people'); return entries.map(entry => ({ params: { slug: entry.id }, props: { entry } })); }
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const allEntries = [...(await getCollection('people')), ...(await getCollection('places'))] as ArchiveEntry[];
+---
+<ArticleLayout entry={entry} allEntries={allEntries}><Content /></ArticleLayout>

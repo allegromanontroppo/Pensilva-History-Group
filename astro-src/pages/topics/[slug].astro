@@ -1,0 +1,13 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArchiveCard from '../../components/ArchiveCard.astro';
+import type { ArchiveEntry } from '../../lib/archive';
+import { alphabetical } from '../../lib/archive';
+import { entriesForTopic, topics } from '../../lib/taxonomy';
+export async function getStaticPaths() { return topics.map(topic => ({ params: { slug: topic.slug }, props: { topic } })); }
+const { topic } = Astro.props;
+const entries = [...(await getCollection('people')), ...(await getCollection('places'))] as ArchiveEntry[];
+const matches = alphabetical(entriesForTopic(entries, topic.slug));
+---
+<BaseLayout title={topic.label}><section class="listing-masthead"><div class="shell"><nav class="breadcrumbs breadcrumbs--listing"><a href="/topics/">Subjects</a><span>/</span><span>{topic.label}</span></nav><p class="eyebrow">{matches.length} {matches.length === 1 ? 'story' : 'stories'}</p><h1>{topic.label}</h1><p class="listing-lede">{topic.description}</p></div></section><section class="section-pad"><div class="shell image-card-grid">{matches.map(entry => <ArchiveCard entry={entry} />)}</div></section></BaseLayout>

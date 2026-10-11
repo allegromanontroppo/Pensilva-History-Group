@@ -1,0 +1,8 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import type { ArchiveEntry } from '../../lib/archive';
+import { topics, entriesForTopic } from '../../lib/taxonomy';
+const entries = [...(await getCollection('people')), ...(await getCollection('places'))] as ArchiveEntry[];
+---
+<BaseLayout title="Browse by subject"><section class="listing-masthead"><div class="shell"><p class="eyebrow">Explore the collection</p><h1>Browse by subject</h1><p class="listing-lede">People and Places remain part of the archive, but these subjects reveal connections across both collections.</p></div></section><section class="section-pad"><div class="shell topic-grid">{topics.map((topic, index) => { const count = entriesForTopic(entries, topic.slug).length; return <a class="topic-card" href={`/topics/${topic.slug}/`}><span class="topic-index">0{index + 1}</span><h2>{topic.label}</h2><p>{topic.description}</p><span class="topic-count">{count} {count === 1 ? 'story' : 'stories'} →</span></a>; })}</div></section></BaseLayout>

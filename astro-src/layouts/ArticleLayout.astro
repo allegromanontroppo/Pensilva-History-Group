@@ -1,0 +1,63 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import TopicChips from '../components/TopicChips.astro';
+import CurrentContext from '../components/CurrentContext.astro';
+import RelatedStories from '../components/RelatedStories.astro';
+import BackToTop from '../components/BackToTop.astro';
+import LongPageNav from '../components/LongPageNav.astro';
+import type { ArchiveEntry } from '../lib/archive';
+import { archiveLabel, excerpt } from '../lib/archive';
+import { previewImage } from '../lib/images';
+import { seoTitleFor } from '../lib/seo';
+import { topicsFor } from '../lib/taxonomy';
+
+interface Props { entry: ArchiveEntry; allEntries: ArchiveEntry[] }
+const { entry, allEntries } = Astro.props;
+const kindTitle = archiveLabel(entry.collection);
+const isEmily = entry.collection === 'people' && entry.id === 'emily-hobhouse';
+const isResearchHub = entry.collection === 'places' && entry.id === 'the-research-hub-local-and-family-history';
+const longForm = entry.body.length > 14000;
+const description = excerpt(entry.body, 165);
+const image = previewImage(entry);
+const seoTitle = seoTitleFor(entry);
+const baseUrl = Astro.site ?? new URL(Astro.url.origin);
+const articleUrl = new URL(`/${entry.collection}/${entry.id}/`, baseUrl).toString();
+const articleImage = image ? new URL(image, baseUrl).toString() : undefined;
+const articleData = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: entry.data.title,
+  description,
+  mainEntityOfPage: articleUrl,
+  image: articleImage ? [articleImage] : undefined,
+  about: topicsFor(entry).map(topic => topic.label),
+};
+---
+<BaseLayout title={entry.data.title} seoTitle={seoTitle} description={description} type="article" image={image} structuredData={articleData}>
+  <section class="article-masthead">
+    <div class="shell article-heading">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>/</span><a href={`/${entry.collection}/`}>{kindTitle}</a></nav>
+      <p class="eyebrow">{kindTitle}</p>
+      <h1>{entry.data.title}</h1>
+      <TopicChips entry={entry} />
+    </div>
+  </section>
+  <div class="shell article-grid">
+    <article class:list={['prose', { 'prose--long': longForm }]}>
+      {longForm && <div class="long-read-note"><strong>Reference page</strong><span>This is one of the archive's longer records. Your browser's Find command can help locate a name.</span></div>}
+      <slot />
+      {longForm && <BackToTop />}
+    </article>
+    <aside class="article-aside">
+      <div class="aside-panel">
+        <p class="aside-label">From the archive</p>
+        <p>The original Pensilva History Group article is preserved here with its photographs and wording.</p>
+        <a href="/archive/">Browse all stories →</a>
+      </div>
+      {longForm && <LongPageNav />}
+      {isEmily && <CurrentContext />}
+      {isResearchHub && <div class="current-context"><p class="eyebrow">Archive note</p><h2>Published material</h2><p>This article describes the Research Hub as it operated when the piece was written. Some facilities, opening arrangements and contact details may have changed since then; the original article is preserved unchanged.</p></div>}
+    </aside>
+  </div>
+  <RelatedStories current={entry} entries={allEntries} />
+</BaseLayout>

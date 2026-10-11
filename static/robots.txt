@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pensilva-history-group.netlify.app/sitemap.xml

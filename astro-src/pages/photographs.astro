@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { gallerySections, galleryImages } from '../lib/images';
+
+const sections = gallerySections.map(section => ({ ...section, images: galleryImages(section.slug) }));
+const total = sections.reduce((sum, section) => sum + section.images.length, 0);
+---
+
+<BaseLayout
+  title="Photographs"
+  description="Historic and modern photographs from the Pensilva History Group collection, including Old Pensilva, Modern Pensilva and the surrounding moorland."
+>
+  <section class="listing-masthead photo-masthead">
+    <div class="shell narrow">
+      <p class="eyebrow">Photographic archive</p>
+      <h1>Pictures of a place changing.</h1>
+      <p class="listing-lede">{total} photographs preserved from the original Pensilva History Group site, gathered here as a visual archive of the village, its buildings and the surrounding moor.</p>
+    </div>
+  </section>
+
+  <nav class="photo-jump" aria-label="Photograph collections">
+    <div class="shell">
+      {sections.map(section => <a href={`#${section.slug}`}>{section.title} <span>{section.images.length}</span></a>)}
+    </div>
+  </nav>
+
+  {sections.map((section, sectionIndex) => (
+    <section id={section.slug} class:list={['photo-collection', { 'photo-collection--alt': sectionIndex % 2 === 1 }]}>
+      <div class="shell">
+        <header class="photo-heading">
+          <div><p class="eyebrow">Collection {String(sectionIndex + 1).padStart(2, '0')}</p><h2>{section.title}</h2></div>
+          <p>{section.description}</p>
+        </header>
+        <div class="photo-grid">
+          {section.images.map((image, index) => (
+            <figure class:list={['photo-item', { 'photo-item--wide': index % 7 === 0 }]}>
+              <img src={image.src} alt={`${section.title} archive photograph: ${image.label}`} loading="lazy" decoding="async" />
+              <figcaption>{image.label}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+</BaseLayout>
+
+<style>
+  .photo-masthead { background: #e8eef0; }
+  .photo-jump { position: sticky; top: 0; z-index: 8; background: rgba(255,255,255,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+  .photo-jump .shell { display: flex; gap: 28px; overflow-x: auto; padding-block: 16px; }
+  .photo-jump a { white-space: nowrap; text-decoration: none; font-size: 13px; font-weight: 750; }
+  .photo-jump span { margin-left: 5px; color: var(--copper); font-weight: 800; }
+  .photo-collection { padding-block: clamp(75px, 9vw, 130px); background: var(--white); scroll-margin-top: 56px; }
+  .photo-collection--alt { background: #eef2f1; }
+  .photo-heading { display: grid; grid-template-columns: 1fr minmax(260px, 480px); align-items: end; gap: 50px; margin-bottom: 44px; }
+  .photo-heading h2 { margin: 0; font-family: var(--serif); font-size: clamp(46px, 6vw, 78px); font-weight: 500; line-height: .98; letter-spacing: -.04em; }
+  .photo-heading > p { margin: 0; color: var(--ink-soft); }
+  .photo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; align-items: stretch; }
+  .photo-item { margin: 0; min-width: 0; background: #dfe5e3; overflow: hidden; }
+  .photo-item--wide { grid-column: span 2; grid-row: span 2; }
+  .photo-item img { display: block; width: 100%; height: 100%; min-height: 230px; aspect-ratio: 4 / 3; object-fit: cover; cursor: zoom-in; transition: transform .25s ease, filter .25s ease; }
+  .photo-item--wide img { min-height: 472px; aspect-ratio: auto; }
+  .photo-item:hover img { transform: scale(1.015); filter: contrast(1.02); }
+  .photo-item figcaption { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  @media (max-width: 900px) {
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    .photo-heading { grid-template-columns: 1fr; gap: 18px; }
+  }
+  @media (max-width: 560px) {
+    .photo-grid { gap: 7px; }
+    .photo-item--wide { grid-column: span 2; }
+    .photo-item img { min-height: 160px; }
+    .photo-item--wide img { min-height: 330px; }
+  }
+</style>

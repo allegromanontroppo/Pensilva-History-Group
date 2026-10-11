@@ -1,0 +1,32 @@
+---
+import type { ArchiveEntry } from '../lib/archive';
+import { archiveLabel, archivePath, excerpt } from '../lib/archive';
+import { previewImage } from '../lib/images';
+import { topicsFor } from '../lib/taxonomy';
+
+interface Props {
+  entry: ArchiveEntry;
+  featured?: boolean;
+  image?: boolean;
+}
+
+const { entry, featured = false, image = true } = Astro.props;
+const src = image ? previewImage(entry) : undefined;
+const topic = topicsFor(entry)[0];
+---
+
+<article class:list={['archive-card', { 'archive-card--featured': featured, 'archive-card--with-image': Boolean(src) }]}>
+  {src ? (
+    <a class="archive-card-image" href={archivePath(entry)} tabindex="-1" aria-hidden="true">
+      <img src={src} alt="" loading="lazy" decoding="async" />
+    </a>
+  ) : image ? (
+    <a class="archive-card-image archive-card-image--empty" href={archivePath(entry)} tabindex="-1" aria-hidden="true"><span>PHG</span></a>
+  ) : null}
+  <div class="archive-card-body">
+    <div class="card-meta"><span>{archiveLabel(entry.collection)}</span>{topic && <span>{topic.label}</span>}</div>
+    <h3><a href={archivePath(entry)}>{entry.data.title}</a></h3>
+    <p>{excerpt(entry.body, featured ? 230 : 135)}</p>
+    <a class="card-link" href={archivePath(entry)}>Read story <span>→</span></a>
+  </div>
+</article>

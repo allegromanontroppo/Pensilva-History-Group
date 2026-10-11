@@ -1,0 +1,9 @@
+---
+import type { ArchiveEntry } from '../lib/archive';
+import { topicsFor } from '../lib/taxonomy';
+interface Props { entry: ArchiveEntry }
+const { entry } = Astro.props;
+---
+<nav class="topic-chips" aria-label="Article subjects">
+  {topicsFor(entry).map(topic => <a href={`/topics/${topic.slug}/`}>{topic.label}</a>)}
+</nav>

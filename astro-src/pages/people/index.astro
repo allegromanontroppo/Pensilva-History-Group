@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArchiveCard from '../../components/ArchiveCard.astro';
+import type { ArchiveEntry } from '../../lib/archive';
+import { alphabetical } from '../../lib/archive';
+const entries = alphabetical((await getCollection('people')) as ArchiveEntry[]);
+---
+<BaseLayout title="People & stories"><section class="listing-masthead"><div class="shell"><p class="eyebrow">{entries.length} archive stories</p><h1>People & stories</h1><p class="listing-lede">Families, remarkable lives, wartime stories and memories of everyday life in and around Pensilva and St Ive.</p></div></section><section class="section-pad"><div class="shell image-card-grid">{entries.map(entry => <ArchiveCard entry={entry} />)}</div></section></BaseLayout>

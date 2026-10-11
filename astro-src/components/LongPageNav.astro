@@ -1,0 +1,37 @@
+<nav id="long-page-nav" class="long-page-nav" aria-label="On this page" hidden>
+  <p class="aside-label">On this page</p>
+  <div class="long-page-links"></div>
+</nav>
+
+<script>
+  const nav = document.querySelector('#long-page-nav');
+  const links = nav?.querySelector('.long-page-links');
+  const headings = [...document.querySelectorAll('.prose h2')];
+
+  if (nav instanceof HTMLElement && links instanceof HTMLElement && headings.length > 1) {
+    headings.forEach((heading, index) => {
+      if (!(heading instanceof HTMLElement)) return;
+      if (!heading.id) {
+        const base = (heading.textContent || `section-${index + 1}`)
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-|-$/g, '');
+        heading.id = base || `section-${index + 1}`;
+      }
+      const link = document.createElement('a');
+      link.href = `#${heading.id}`;
+      link.textContent = heading.textContent || `Section ${index + 1}`;
+      links.append(link);
+    });
+    nav.hidden = false;
+  }
+</script>
+
+<style>
+  .long-page-nav { margin-top: 38px; padding: 23px 0; border-top: 1px solid var(--line); }
+  .long-page-links { margin-top: 12px; display: grid; gap: 8px; }
+  :global(.long-page-links a) { color: var(--ink-soft); text-decoration: none; font-size: 12px; line-height: 1.45; }
+  :global(.long-page-links a:hover) { color: var(--sea); text-decoration: underline; text-underline-offset: 3px; }
+  :global(.prose h2) { scroll-margin-top: 30px; }
+</style>

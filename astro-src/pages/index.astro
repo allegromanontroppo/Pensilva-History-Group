@@ -1,0 +1,149 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ArchiveCard from '../components/ArchiveCard.astro';
+import type { ArchiveEntry } from '../lib/archive';
+import { previewImage, galleryImages } from '../lib/images';
+import { topics, entriesForTopic } from '../lib/taxonomy';
+
+const people = await getCollection('people');
+const places = await getCollection('places');
+const entries = [...people, ...places] as ArchiveEntry[];
+const emily = people.find(entry => entry.id === 'emily-hobhouse') as ArchiveEntry;
+const emilyImage = previewImage(emily);
+const featuredIds = ['pensilva-a-brief-history', 'south-caradon-mine', 'war-memorials-in-pensilva-and-st-ive'];
+const featured = featuredIds.map(id => entries.find(entry => entry.id === id)).filter(Boolean) as ArchiveEntry[];
+const photoTeasers = galleryImages('old-pensilva').slice(0, 4);
+---
+<BaseLayout transparentHeader>
+  <Hero />
+
+  <section class="home-index">
+    <div class="shell archive-stats">
+      <div><strong>{entries.length}</strong><span>archive stories</span></div>
+      <div><strong>{people.length}</strong><span>people & memories</span></div>
+      <div><strong>{places.length}</strong><span>places & landscape</span></div>
+      <a href="/search/">Search every article <span>→</span></a>
+    </div>
+  </section>
+
+  <section class="emily-feature emily-feature--spotlight">
+    <div class="shell emily-overline">
+      <span>Featured story</span>
+      <span>St Ive · Cornwall · South Africa</span>
+    </div>
+    <div class="shell emily-grid emily-grid--spotlight">
+      <div class="emily-copy emily-copy--spotlight">
+        <p class="eyebrow">A remarkable life from St Ive</p>
+        <h2>Emily<br />Hobhouse</h2>
+        <p class="emily-lede">Born at St Ive Rectory in 1860, Emily Hobhouse became a humanitarian whose exposure of conditions in British concentration camps during the South African War made her a revered figure in South Africa.</p>
+        <p>The archive follows a life that began in this small Cornish parish and reached far beyond it. The rectory where she grew up is now home to <em>The Story of Emily</em>, a museum and immersive historical experience.</p>
+        <div class="emily-actions">
+          <a class="button button--light" href="/people/emily-hobhouse/">Read the Emily Hobhouse archive</a>
+          <a class="text-link text-link--light" href="https://thestoryofemily.com/" rel="external">Visit The Story of Emily <span>↗</span></a>
+        </div>
+      </div>
+      <a class="emily-media emily-media--spotlight" href="/people/emily-hobhouse/" aria-label="Read the Emily Hobhouse archive">
+        {emilyImage ? <img src={emilyImage} alt="Emily Hobhouse" loading="eager" /> : null}
+        <span class="emily-place">St Ive → South Africa</span>
+        <span class="emily-read">Her story <span aria-hidden="true">→</span></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="subject-section section-pad">
+    <div class="shell">
+      <div class="section-heading">
+        <div><p class="eyebrow">Explore the collection</p><h2>Six routes into the archive.</h2></div>
+        <a class="text-link" href="/topics/">Browse all subjects <span>→</span></a>
+      </div>
+      <div class="topic-grid topic-grid--home">
+        {topics.map((topic, index) => {
+          const count = entriesForTopic(entries, topic.slug).length;
+          return <a class="topic-card" href={`/topics/${topic.slug}/`}><span class="topic-index">0{index + 1}</span><h3>{topic.label}</h3><p>{topic.description}</p><span class="topic-count">{count} stories</span></a>;
+        })}
+      </div>
+    </div>
+  </section>
+
+  <section class="selected-section section-pad">
+    <div class="shell">
+      <div class="section-heading"><div><p class="eyebrow">Selected from the archive</p><h2>A place to begin.</h2></div><a class="text-link" href="/archive/">See all {entries.length} stories <span>→</span></a></div>
+      <div class="image-card-grid image-card-grid--three">{featured.map(entry => <ArchiveCard entry={entry} />)}</div>
+    </div>
+  </section>
+
+  <section class="home-photos">
+    <div class="shell home-photo-heading">
+      <div><p class="eyebrow">The photographic archive</p><h2>Look before you read.</h2></div>
+      <div><p>Old village views, later photographs and images from the moorland collection have their own home in the archive.</p><a class="text-link" href="/photographs/">Browse the photographs <span>→</span></a></div>
+    </div>
+    <a class="shell home-photo-strip" href="/photographs/" aria-label="Browse the photographic archive">
+      {photoTeasers.map((image, index) => <img src={image.src} alt={`Old Pensilva archive photograph ${index + 1}`} loading="lazy" decoding="async" />)}
+    </a>
+  </section>
+
+  <section class="film-section section-pad">
+    <div class="shell film-grid">
+      <div class="film-copy">
+        <p class="eyebrow">From the original archive</p>
+        <h2>Pensilva on film.</h2>
+        <p>A film of Pensilva preserved from the earlier website, alongside the written and photographic archive.</p>
+      </div>
+      <div class="flex-video"><iframe src="https://www.youtube.com/embed/zMv0o9-exeI?rel=0" title="Pensilva history film" loading="lazy" allowfullscreen></iframe></div>
+    </div>
+  </section>
+
+  <section class="newspaper-strip">
+    <div class="shell newspaper-grid">
+      <div><p class="eyebrow">In the papers · 23 November 1871</p><p class="newspaper-source">From the Royal Cornwall Gazette, Falmouth Packet, Cornish Weekly News and General Advertiser of Thursday, November 23, 1871.</p></div>
+      <blockquote>“VAGRANTS - P.C. Lyle of the county constabulary has locked up two of these pests this week - tough, hardy, lazy chaps of 30, one a discharged soldier, the other a schoolmaster, who were begging in Ludgvan - and Major Trelawney has sent them to the treadwheel for 14 days.”</blockquote>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .emily-feature--spotlight { padding-block: clamp(70px, 9vw, 125px); background: var(--ink); color: var(--white); overflow: hidden; }
+  .emily-overline { display: flex; justify-content: space-between; gap: 30px; margin-bottom: 26px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,.28); color: rgba(255,255,255,.68); font-size: 10px; font-weight: 850; letter-spacing: .16em; text-transform: uppercase; }
+  .emily-grid--spotlight { grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr); gap: clamp(24px, 4vw, 64px); align-items: stretch; }
+  .emily-copy--spotlight { padding: clamp(38px, 5vw, 74px) 0; background: transparent; }
+  .emily-copy--spotlight .eyebrow { color: #d9bd67; }
+  .emily-copy--spotlight h2 { margin: 3px 0 34px; color: var(--white); font-size: clamp(78px, 10vw, 142px); line-height: .76; letter-spacing: -.065em; }
+  .emily-copy--spotlight > p:not(.eyebrow) { max-width: 720px; color: rgba(255,255,255,.72); }
+  .emily-copy--spotlight .emily-lede { max-width: 760px; color: var(--white) !important; font-size: clamp(24px, 2.45vw, 34px); line-height: 1.32; }
+  .emily-copy--spotlight .button--light { background: var(--white); color: var(--ink); }
+  .emily-copy--spotlight .button--light:hover { background: transparent; color: var(--white); }
+  .emily-media--spotlight { min-height: clamp(620px, 67vw, 820px); display: block; text-decoration: none; box-shadow: 0 30px 80px rgba(0,0,0,.2); }
+  .emily-media--spotlight img { transition: transform .45s ease, filter .45s ease; filter: saturate(.72) contrast(1.02); }
+  .emily-media--spotlight:hover img { transform: scale(1.018); filter: saturate(.82) contrast(1.02); }
+  .emily-media--spotlight .emily-place { color: var(--ink); }
+  .emily-read { position: absolute; right: 0; bottom: 0; padding: 13px 17px; background: var(--ink); color: var(--white); font-size: 10px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+  .emily-read span { display: inline-block; margin-left: 7px; transition: transform .2s ease; }
+  .emily-media--spotlight:hover .emily-read span { transform: translateX(4px); }
+  .home-photos { padding-block: clamp(75px, 10vw, 145px); background: #dfe8e9; overflow: hidden; }
+  .home-photo-heading { display: grid; grid-template-columns: 1fr minmax(280px, 470px); gap: 70px; align-items: end; margin-bottom: 42px; }
+  .home-photo-heading h2, .film-copy h2 { margin: 0; font-family: var(--serif); font-size: clamp(46px, 6vw, 78px); line-height: .95; font-weight: 500; letter-spacing: -.04em; }
+  .home-photo-heading > div:last-child p { margin-top: 0; color: var(--ink-soft); }
+  .home-photo-strip { display: grid; grid-template-columns: 1.15fr .85fr .85fr 1.15fr; gap: 8px; text-decoration: none; }
+  .home-photo-strip img { width: 100%; height: clamp(250px, 30vw, 410px); object-fit: cover; filter: saturate(.82) contrast(1.03); transition: filter .25s ease, transform .25s ease; }
+  .home-photo-strip:hover img { filter: saturate(.95) contrast(1.04); }
+  .home-photo-strip img:nth-child(2), .home-photo-strip img:nth-child(3) { transform: translateY(24px); }
+  .film-section { background: var(--paper-deep); }
+  .film-grid { display: grid; grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr); gap: clamp(45px, 8vw, 110px); align-items: center; }
+  .film-copy p:last-child { max-width: 410px; color: var(--ink-soft); }
+  @media (max-width: 880px) {
+    .emily-grid--spotlight { grid-template-columns: 1fr; }
+    .emily-copy--spotlight h2 { font-size: clamp(72px, 16vw, 120px); }
+    .emily-media--spotlight { min-height: 650px; }
+  }
+  @media (max-width: 780px) {
+    .emily-overline { display: none; }
+    .emily-copy--spotlight { padding-top: 0; }
+    .emily-media--spotlight { min-height: 520px; }
+    .home-photo-heading, .film-grid { grid-template-columns: 1fr; gap: 20px; }
+    .home-photo-strip { grid-template-columns: 1fr 1fr; }
+    .home-photo-strip img { height: 230px; }
+    .home-photo-strip img:nth-child(2), .home-photo-strip img:nth-child(3) { transform: none; }
+  }
+</style>

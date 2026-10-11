@@ -1,0 +1,41 @@
+---
+interface Props { transparent?: boolean }
+const { transparent = false } = Astro.props;
+const path = Astro.url.pathname;
+const nav = [
+  { href: '/topics/', label: 'Subjects' },
+  { href: '/people/', label: 'People' },
+  { href: '/places/', label: 'Places' },
+  { href: '/photographs/', label: 'Photos' },
+  { href: '/archive/', label: 'Archive' },
+];
+const active = (href: string) => href === '/archive/' ? path === href : path.startsWith(href);
+---
+
+<header class:list={['site-header', { 'site-header--transparent': transparent }]}>
+  <div class="shell header-inner">
+    <a class="wordmark" href="/" aria-label="Pensilva History home">
+      <span class="wordmark-main">Pensilva</span>
+      <span class="wordmark-sub">History Archive</span>
+    </a>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      {nav.map(item => <a href={item.href} aria-current={active(item.href) ? 'page' : undefined}>{item.label}</a>)}
+      <a class="nav-search" href="/search/" aria-current={path === '/search/' ? 'page' : undefined}>Search <span aria-hidden="true">⌕</span></a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  @media (max-width: 850px) {
+    .header-inner { align-items: center; }
+    .primary-nav { max-width: 62vw; overflow-x: auto; gap: 18px; padding-block: 12px; scrollbar-width: none; }
+    .primary-nav::-webkit-scrollbar { display: none; }
+    .primary-nav a:not(:first-child) { display: inline-flex; }
+    .primary-nav a { white-space: nowrap; flex: 0 0 auto; }
+  }
+  @media (max-width: 560px) {
+    .wordmark-main { font-size: 24px; }
+    .wordmark-sub { display: none; }
+    .primary-nav { max-width: 67vw; font-size: 12px; }
+  }
+</style>

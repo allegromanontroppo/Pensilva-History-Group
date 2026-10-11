@@ -24,7 +24,7 @@
     closeButton?.focus();
   }
 
-  document.querySelectorAll('.prose img').forEach(image => {
+  document.querySelectorAll('.prose img, .photo-grid img').forEach(image => {
     if (!(image instanceof HTMLImageElement)) return;
     image.classList.add('zoomable-image');
     image.tabIndex = 0;

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { gallerySections, galleryImages } from '../lib/images';
+import { gallerySections, galleryImages, netlifyImage, netlifySrcSet } from '../lib/images';
 
 const sections = gallerySections.map(section => ({ ...section, images: galleryImages(section.slug) }));
 const total = sections.reduce((sum, section) => sum + section.images.length, 0);
@@ -32,12 +32,31 @@ const total = sections.reduce((sum, section) => sum + section.images.length, 0);
           <p>{section.description}</p>
         </header>
         <div class="photo-grid">
-          {section.images.map((image, index) => (
-            <figure class:list={['photo-item', { 'photo-item--wide': index % 7 === 0 }]}>
-              <img src={image.src} alt={`${section.title} archive photograph: ${image.label}`} loading="lazy" decoding="async" />
-              <figcaption>{image.label}</figcaption>
-            </figure>
-          ))}
+          {section.images.map((image, index) => {
+            const wide = index % 7 === 0;
+            const thumbnailWidths = wide ? [480, 800, 1200] : [320, 560, 800];
+            const thumbnailWidth = wide ? 800 : 560;
+            const thumbnailSizes = wide
+              ? '(max-width: 900px) calc(100vw - 48px), 50vw'
+              : '(max-width: 900px) 50vw, 25vw';
+            const lightboxWidths = [900, 1400, 1800];
+
+            return (
+              <figure class:list={['photo-item', { 'photo-item--wide': wide }]}>
+                <img
+                  src={netlifyImage(image.src, { width: thumbnailWidth, quality: 80 })}
+                  srcset={netlifySrcSet(image.src, thumbnailWidths, { quality: 80 })}
+                  sizes={thumbnailSizes}
+                  data-lightbox-src={netlifyImage(image.src, { width: 1400, quality: 88 })}
+                  data-lightbox-srcset={netlifySrcSet(image.src, lightboxWidths, { quality: 88 })}
+                  alt={`${section.title} archive photograph: ${image.label}`}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption>{image.label}</figcaption>
+              </figure>
+            );
+          })}
         </div>
       </div>
     </section>

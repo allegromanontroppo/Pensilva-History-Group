@@ -6,6 +6,31 @@ const imageModules = import.meta.glob('../../src/**/*.{jpg,jpeg,JPG,JPEG,png,PNG
   import: 'default',
 }) as Record<string, string>;
 
+type NetlifyImageFit = 'contain' | 'cover' | 'fill';
+type NetlifyImagePosition = 'top' | 'bottom' | 'left' | 'right' | 'center';
+
+interface NetlifyImageOptions {
+  width?: number;
+  height?: number;
+  quality?: number;
+  fit?: NetlifyImageFit;
+  position?: NetlifyImagePosition;
+}
+
+export function netlifyImage(src: string, options: NetlifyImageOptions = {}) {
+  const params = new URLSearchParams({ url: src });
+  if (options.width) params.set('w', String(options.width));
+  if (options.height) params.set('h', String(options.height));
+  if (options.quality) params.set('q', String(options.quality));
+  if (options.fit) params.set('fit', options.fit);
+  if (options.position) params.set('position', options.position);
+  return `/.netlify/images?${params.toString()}`;
+}
+
+export function netlifySrcSet(src: string, widths: number[], options: Omit<NetlifyImageOptions, 'width'> = {}) {
+  return widths.map(width => `${netlifyImage(src, { ...options, width })} ${width}w`).join(', ');
+}
+
 function resolveArchiveImage(entry: ArchiveEntry, target: string): string | undefined {
   let cleaned = target.trim().replace(/^<|>$/g, '').split(/\s+["']/)[0];
   if (!cleaned || /^(?:https?:)?\/\//i.test(cleaned) || cleaned.startsWith('data:') || cleaned.startsWith('/')) return undefined;

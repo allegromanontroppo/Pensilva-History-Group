@@ -16,6 +16,7 @@ const { entry, allEntries } = Astro.props;
 const kindTitle = archiveLabel(entry.collection);
 const isEmily = entry.collection === 'people' && entry.id === 'emily-hobhouse';
 const isResearchHub = entry.collection === 'places' && entry.id === 'the-research-hub-local-and-family-history';
+const hasContextPanel = isEmily || isResearchHub;
 const longForm = entry.body.length > 14000;
 const description = excerpt(entry.body, 165);
 const image = previewImage(entry);
@@ -48,7 +49,7 @@ const articleData = {
       <slot />
       {longForm && <BackToTop />}
     </article>
-    <aside class="article-aside">
+    <aside class:list={['article-aside', { 'article-aside--stacked': hasContextPanel }]}>
       <div class="aside-panel">
         <p class="aside-label">From the archive</p>
         <p>The original Pensilva History Group article is preserved here with its photographs and wording.</p>
@@ -61,3 +62,9 @@ const articleData = {
   </div>
   <RelatedStories current={entry} entries={allEntries} />
 </BaseLayout>
+
+<style>
+  .article-aside--stacked .aside-panel {
+    position: static;
+  }
+</style>

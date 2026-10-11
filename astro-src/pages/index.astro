@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import ArchiveCard from '../components/ArchiveCard.astro';
 import type { ArchiveEntry } from '../lib/archive';
-import { previewImage, galleryImages } from '../lib/images';
+import { previewImage, galleryImages, netlifyImage, netlifySrcSet } from '../lib/images';
 import { topics, entriesForTopic } from '../lib/taxonomy';
 
 const people = await getCollection('people');
@@ -12,6 +12,8 @@ const places = await getCollection('places');
 const entries = [...people, ...places] as ArchiveEntry[];
 const emily = people.find(entry => entry.id === 'emily-hobhouse') as ArchiveEntry;
 const emilyImage = previewImage(emily);
+const emilyImageSrc = emilyImage ? netlifyImage(emilyImage, { width: 900, quality: 84 }) : undefined;
+const emilyImageSrcSet = emilyImage ? netlifySrcSet(emilyImage, [480, 720, 900, 1200], { quality: 84 }) : undefined;
 const featuredIds = ['pensilva-a-brief-history', 'south-caradon-mine', 'war-memorials-in-pensilva-and-st-ive'];
 const featured = featuredIds.map(id => entries.find(entry => entry.id === id)).filter(Boolean) as ArchiveEntry[];
 const photoTeasers = galleryImages('old-pensilva').slice(0, 4);
@@ -45,7 +47,16 @@ const photoTeasers = galleryImages('old-pensilva').slice(0, 4);
         </div>
       </div>
       <a class="emily-media emily-media--spotlight" href="/people/emily-hobhouse/" aria-label="Read the Emily Hobhouse archive">
-        {emilyImage ? <img src={emilyImage} alt="Emily Hobhouse" loading="eager" /> : null}
+        {emilyImage ? (
+          <img
+            src={emilyImageSrc}
+            srcset={emilyImageSrcSet}
+            sizes="(max-width: 880px) calc(100vw - 48px), 42vw"
+            alt="Emily Hobhouse"
+            loading="lazy"
+            decoding="async"
+          />
+        ) : null}
         <span class="emily-place">St Ive → South Africa</span>
         <span class="emily-read">Her story <span aria-hidden="true">→</span></span>
       </a>
@@ -80,7 +91,16 @@ const photoTeasers = galleryImages('old-pensilva').slice(0, 4);
       <div><p>Old village views, later photographs and images from the moorland collection have their own home in the archive.</p><a class="text-link" href="/photographs/">Browse the photographs <span>→</span></a></div>
     </div>
     <a class="shell home-photo-strip" href="/photographs/" aria-label="Browse the photographic archive">
-      {photoTeasers.map((image, index) => <img src={image.src} alt={`Old Pensilva archive photograph ${index + 1}`} loading="lazy" decoding="async" />)}
+      {photoTeasers.map((image, index) => (
+        <img
+          src={netlifyImage(image.src, { width: 640, quality: 80 })}
+          srcset={netlifySrcSet(image.src, [360, 640, 900], { quality: 80 })}
+          sizes="(max-width: 780px) 50vw, 25vw"
+          alt={`Old Pensilva archive photograph ${index + 1}`}
+          loading="lazy"
+          decoding="async"
+        />
+      ))}
     </a>
   </section>
 

@@ -15,14 +15,14 @@ interface Props {
 }
 const {
   title,
-  description = 'The digital archive of Pensilva History Group: people, places, mines, photographs and memories from Pensilva and St Ive in east Cornwall.',
+  description = 'A digital archive of people, places, mines, photographs and memories from Pensilva and St Ive in east Cornwall.',
   transparentHeader = false,
   type = 'website',
   image,
   structuredData,
 } = Astro.props;
-const siteName = 'Pensilva History Group';
-const pageTitle = title ? `${title} · ${siteName}` : `${siteName} · Pensilva & St Ive history`;
+const siteName = 'Pensilva History';
+const pageTitle = title ? `${title} · ${siteName}` : `${siteName} · Pensilva & St Ive archive`;
 const siteUrl = Astro.site ?? new URL(Astro.url.origin);
 const canonical = new URL(Astro.url.pathname, siteUrl).toString();
 const rootUrl = siteUrl.toString().replace(/\/$/, '');
@@ -32,7 +32,7 @@ const websiteData = {
   '@type': 'WebSite',
   name: siteName,
   url: rootUrl,
-  description: 'The digital archive of the Pensilva History Group.',
+  description: 'A digital archive of the history of Pensilva and St Ive in east Cornwall.',
 };
 const schema = structuredData ? [websiteData, structuredData] : websiteData;
 ---
@@ -63,14 +63,14 @@ const schema = structuredData ? [websiteData, structuredData] : websiteData;
     <footer class="site-footer">
       <div class="shell footer-grid">
         <div>
-          <a class="footer-mark" href="/">Pensilva History Group</a>
-          <p>Studying and recording the industrial and social history of Pensilva and the Parish of St Ive.</p>
+          <a class="footer-mark" href="/">Pensilva History</a>
+          <p>A digital archive of the industrial and social history of Pensilva and St Ive.</p>
         </div>
         <nav class="footer-links" aria-label="Footer navigation">
           <a href="/topics/">Subjects</a><a href="/photographs/">Photographs</a><a href="/archive/">Archive</a><a href="/search/">Search</a>
         </nav>
       </div>
-      <div class="shell footer-small">Community archive · Pensilva & St Ive, Cornwall</div>
+      <div class="shell footer-small">Local history archive · Pensilva & St Ive, Cornwall</div>
     </footer>
     <ImageLightbox />
   </body>

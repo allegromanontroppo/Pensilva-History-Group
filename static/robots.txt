@@ -1,8 +1,7 @@
 # Pensilva History crawler and content-use policy
 #
-# Ordinary search indexing, links and short reference excerpts are welcome.
-# Use of protected material for AI model training or fine-tuning is not permitted.
-# Full-content reproduction is not permitted; reference-level use is preferred.
+# Please find, index, link to and cite Pensilva History — including in AI search.
+# Please do not absorb protected archive material into model-training corpora.
 # Rights are reserved where applicable, including for text and data mining.
 
 User-agent: *
@@ -10,11 +9,44 @@ Allow: /
 Content-Signal: search=yes, ai-train=no, use=reference
 Content-Usage: train-ai=n
 
-# OpenAI training crawler. OAI-SearchBot remains allowed via the general rule above.
+# Search, citation and user-directed retrieval are welcome.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: meta-externalfetcher
+Allow: /
+
+# Model training and dataset-development crawlers are refused.
 User-agent: GPTBot
 Disallow: /
 
-# Anthropic model-training crawler. Claude search/user-initiated access is not blocked here.
 User-agent: ClaudeBot
 Disallow: /
 
@@ -25,23 +57,22 @@ Disallow: /
 User-agent: Claude-Web
 Disallow: /
 
-# Google AI training/grounding control token; this does not block Google Search.
+# Google-Extended controls Gemini/Vertex training and grounding separately from Google Search.
 User-agent: Google-Extended
 Disallow: /
 
-# Apple foundation-model training control token; ordinary Applebot discovery remains allowed.
+# Applebot-Extended controls foundation-model training separately from Applebot discovery/search.
 User-agent: Applebot-Extended
 Disallow: /
 
-# Common Crawl dataset crawler.
+# Meta model-development crawler; user-directed Meta fetching remains allowed above.
+User-agent: meta-externalagent
+Disallow: /
+
+# Common Crawl and additional dataset/model-development crawlers.
 User-agent: CCBot
 Disallow: /
 
-# Perplexity automated crawler.
-User-agent: PerplexityBot
-Disallow: /
-
-# Additional dataset / model-development crawlers.
 User-agent: Bytespider
 Disallow: /
 

@@ -31,6 +31,17 @@ function requireFileContains(path, needles) {
   }
 }
 
+function requireFileOmits(path, needles) {
+  if (!existsSync(path)) {
+    errors.push(`Required protection file not found: ${path}`);
+    return;
+  }
+  const source = readFileSync(path, 'utf8');
+  for (const needle of needles) {
+    if (source.includes(needle)) errors.push(`${path}: overly broad AI restriction must not be present: ${needle}`);
+  }
+}
+
 for (const collection of collections) {
   const markdownFiles = readdirSync(collection).filter(file => file.endsWith('.md')).sort();
 
@@ -81,26 +92,43 @@ const archiveImageCount = collections.reduce((sum, collection) => sum + imageFil
 requireFileContains('static/robots.txt', [
   'Content-Signal: search=yes, ai-train=no, use=reference',
   'Content-Usage: train-ai=n',
-  'User-agent: GPTBot',
-  'User-agent: ClaudeBot',
-  'User-agent: Google-Extended',
-  'User-agent: Applebot-Extended',
-  'User-agent: CCBot',
+  'User-agent: Googlebot\nAllow: /',
+  'User-agent: OAI-SearchBot\nAllow: /',
+  'User-agent: Claude-SearchBot\nAllow: /',
+  'User-agent: Claude-User\nAllow: /',
+  'User-agent: PerplexityBot\nAllow: /',
+  'User-agent: Applebot\nAllow: /',
+  'User-agent: GPTBot\nDisallow: /',
+  'User-agent: ClaudeBot\nDisallow: /',
+  'User-agent: Google-Extended\nDisallow: /',
+  'User-agent: Applebot-Extended\nDisallow: /',
+  'User-agent: CCBot\nDisallow: /',
 ]);
 requireFileContains('static/.well-known/tdmrep.json', ['"tdm-reservation": 1']);
-requireFileContains('static/ai.txt', ['User-Agent: *', 'Disallow: /']);
+requireFileContains('static/ai.txt', [
+  'model-training and dataset-ingestion opt-out only',
+  'search, linking, citation and',
+  'User-Agent: *',
+  'Disallow: /',
+]);
 requireFileContains('astro-src/layouts/BaseLayout.astro', [
-  'noai, noimageai',
+  'index, follow, max-image-preview:large',
   'name="tdm-reservation" content="1"',
   'name="tdm-policy"',
   '/rights/',
 ]);
+requireFileOmits('astro-src/layouts/BaseLayout.astro', ['noai', 'noimageai']);
 requireFileContains('netlify.toml', [
   'TDM-Reservation = "1"',
   'Content-Usage = "train-ai=n"',
   'Content-Signal = "search=yes, ai-train=no, use=reference"',
 ]);
-requireFileContains('astro-src/pages/rights.astro', ['AI training and text & data mining', 'Machine-readable reservation']);
+requireFileOmits('netlify.toml', ['X-Robots-Tag = "noai, noimageai"']);
+requireFileContains('astro-src/pages/rights.astro', [
+  'including in AI search',
+  'AI training and text & data mining',
+  'Machine-readable reservation',
+]);
 
 if (errors.length) {
   console.error(`Archive integrity check failed with ${errors.length} problem${errors.length === 1 ? '' : 's'}:`);
@@ -108,4 +136,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Archive integrity check passed: ${articleCount} articles, ${imageReferenceCount} local Markdown image references, ${archiveImageCount} article image files, ${galleryImageCount} gallery photographs, the engine-house hero painting, and the archive's AI/TDM rights signals.`);
+console.log(`Archive integrity check passed: ${articleCount} articles, ${imageReferenceCount} local Markdown image references, ${archiveImageCount} article image files, ${galleryImageCount} gallery photographs, the engine-house hero painting, and the archive's search-friendly AI/TDM rights signals.`);

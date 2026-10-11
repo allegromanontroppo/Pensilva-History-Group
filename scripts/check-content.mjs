@@ -20,6 +20,17 @@ function imageFilesUnder(directory) {
   return found;
 }
 
+function requireFileContains(path, needles) {
+  if (!existsSync(path)) {
+    errors.push(`Required protection file not found: ${path}`);
+    return;
+  }
+  const source = readFileSync(path, 'utf8');
+  for (const needle of needles) {
+    if (!source.includes(needle)) errors.push(`${path}: required protection signal missing: ${needle}`);
+  }
+}
+
 for (const collection of collections) {
   const markdownFiles = readdirSync(collection).filter(file => file.endsWith('.md')).sort();
 
@@ -67,10 +78,34 @@ for (const gallery of galleries) {
 
 const archiveImageCount = collections.reduce((sum, collection) => sum + imageFilesUnder(collection).length, 0);
 
+requireFileContains('static/robots.txt', [
+  'Content-Signal: search=yes, ai-train=no, use=reference',
+  'Content-Usage: train-ai=n',
+  'User-agent: GPTBot',
+  'User-agent: ClaudeBot',
+  'User-agent: Google-Extended',
+  'User-agent: Applebot-Extended',
+  'User-agent: CCBot',
+]);
+requireFileContains('static/.well-known/tdmrep.json', ['"tdm-reservation": 1']);
+requireFileContains('static/ai.txt', ['User-Agent: *', 'Disallow: /']);
+requireFileContains('astro-src/layouts/BaseLayout.astro', [
+  'noai, noimageai',
+  'name="tdm-reservation" content="1"',
+  'name="tdm-policy"',
+  '/rights/',
+]);
+requireFileContains('netlify.toml', [
+  'TDM-Reservation = "1"',
+  'Content-Usage = "train-ai=n"',
+  'Content-Signal = "search=yes, ai-train=no, use=reference"',
+]);
+requireFileContains('astro-src/pages/rights.astro', ['AI training and text & data mining', 'Machine-readable reservation']);
+
 if (errors.length) {
   console.error(`Archive integrity check failed with ${errors.length} problem${errors.length === 1 ? '' : 's'}:`);
   for (const error of errors) console.error(` - ${error}`);
   process.exit(1);
 }
 
-console.log(`Archive integrity check passed: ${articleCount} articles, ${imageReferenceCount} local Markdown image references, ${archiveImageCount} article image files, ${galleryImageCount} gallery photographs, and the engine-house hero painting.`);
+console.log(`Archive integrity check passed: ${articleCount} articles, ${imageReferenceCount} local Markdown image references, ${archiveImageCount} article image files, ${galleryImageCount} gallery photographs, the engine-house hero painting, and the archive's AI/TDM rights signals.`);

@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Rights & reuse"
+  description="Rights, reuse, text and data mining, and AI training policy for the Pensilva History archive."
+>
+  <section class="listing-masthead listing-masthead--archive">
+    <div class="shell narrow">
+      <p class="eyebrow">Archive policy</p>
+      <h1>Rights & reuse.</h1>
+      <p class="listing-lede">The archive is public so that people can find, read, cite and enjoy Pensilva and St Ive history. Public access is not blanket permission to copy, republish, mine or train on protected material.</p>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="shell narrow prose rights-copy">
+      <h2>A mixed historical archive</h2>
+      <p>Pensilva History preserves articles, photographs, transcriptions and source material created by many people over many years. Copyright and other rights therefore vary from item to item.</p>
+      <p>Nothing on this page should be read as Pensilva History claiming new rights over material that is genuinely in the public domain. Where an article, photograph or other item belongs to a named contributor, photographer, author, institution or other third party, their rights remain theirs.</p>
+
+      <h2>Material created for this site</h2>
+      <p>Rights in the site's original design, compilation, metadata, new editorial material and other original material created for Pensilva History are reserved where applicable. The preservation and presentation of older archive material does not transfer ownership of underlying third-party works.</p>
+
+      <h2>AI training and text & data mining</h2>
+      <p>To the extent that copyright, database rights or other applicable rights are held by Pensilva History or the relevant contributor or rightsholder, those rights are expressly reserved against automated text and data mining, dataset construction, model training, model fine-tuning and similar computational use without permission, except where applicable law provides otherwise.</p>
+      <p>No permission is granted to reproduce substantial parts of protected archive material as a substitute for visiting or consulting the original source.</p>
+
+      <h2>Search, links and citation</h2>
+      <p>Ordinary search-engine indexing is welcome. Linking to the archive, citing it, and using short excerpts for genuine reference, research, criticism, review or other uses permitted by law are not what these restrictions are intended to prevent.</p>
+      <p>Our machine-readable content preference therefore permits search and reference-level use while refusing AI model training. It does not grant rights that we do not own, and it does not override rights held by contributors or third parties.</p>
+
+      <h2>Machine-readable reservation</h2>
+      <p>The site publishes multiple complementary signals so that automated systems have no ambiguity about this policy. These include crawler-specific rules in <a href="/robots.txt">robots.txt</a>, W3C TDM Reservation Protocol metadata and HTTP headers, the current <code>Content-Usage</code> AI preference signal, <code>noai</code>/<code>noimageai</code> declarations, and a Spawning-format <a href="/ai.txt">ai.txt</a> training opt-out.</p>
+      <p>The site-wide W3C TDM reservation is also published at <a href="/.well-known/tdmrep.json">/.well-known/tdmrep.json</a>.</p>
+
+      <h2>A note on enforcement</h2>
+      <p>These signals state the archive's preferences and reserve rights; they are not a technical lock against a scraper that deliberately ignores them. Their purpose is to make the permitted and refused uses explicit to responsible crawlers, dataset builders and other automated systems.</p>
+
+      <p><small>Policy last updated 11 October 2026.</small></p>
+    </div>
+  </section>
+</BaseLayout>

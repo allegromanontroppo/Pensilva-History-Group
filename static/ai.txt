@@ -1,0 +1,22 @@
+# Spawning ai.txt training opt-out
+# Pensilva History does not permit protected site material to be used for
+# commercial AI model training or dataset construction without permission.
+# Public-domain and third-party material retain their existing legal status.
+
+User-Agent: *
+Disallow: /
+Disallow: *.html
+Disallow: *.htm
+Disallow: *.txt
+Disallow: *.md
+Disallow: *.xml
+Disallow: *.json
+Disallow: *.jpg
+Disallow: *.jpeg
+Disallow: *.png
+Disallow: *.webp
+Disallow: *.gif
+Disallow: *.svg
+Disallow: *.pdf
+Disallow: *.js
+Disallow: *.css

@@ -14,9 +14,9 @@ const active = (href: string) => href === '/archive/' ? path === href : path.sta
 
 <header class:list={['site-header', { 'site-header--transparent': transparent }]}>
   <div class="shell header-inner">
-    <a class="wordmark" href="/" aria-label="Pensilva History Group home">
+    <a class="wordmark" href="/" aria-label="Pensilva History home">
       <span class="wordmark-main">Pensilva</span>
-      <span class="wordmark-sub">History Group</span>
+      <span class="wordmark-sub">History Archive</span>
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
       {nav.map(item => <a href={item.href} aria-current={active(item.href) ? 'page' : undefined}>{item.label}</a>)}

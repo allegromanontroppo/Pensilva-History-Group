@@ -47,4 +47,4 @@ Existing article URLs under `/people/<slug>/` and `/places/<slug>/` are retained
 
 ## Historical provenance
 
-Some articles identify the Pensilva History Group because that is the provenance of the original material. The current site is presented simply as **Pensilva History**, a standalone archive, rather than as the website of a present-day organisation.
+Some preserved articles identify the Pensilva History Group because that is the provenance of the original material. The current site is presented simply as **Pensilva History**, a standalone archive, rather than as the website of a present-day organisation.

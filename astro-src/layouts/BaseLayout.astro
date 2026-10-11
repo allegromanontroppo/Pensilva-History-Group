@@ -1,7 +1,9 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SkipLink from '../components/SkipLink.astro';
+import ImageLightbox from '../components/ImageLightbox.astro';
 import '../styles/global.css';
+import '../styles/lightbox.css';
 
 interface Props {
   title?: string;
@@ -17,7 +19,21 @@ const {
 } = Astro.props;
 const siteName = 'Pensilva History Group';
 const pageTitle = title ? `${title} · ${siteName}` : `${siteName} · Pensilva & St Ive history`;
-const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).toString();
+const siteUrl = Astro.site ?? new URL(Astro.url.origin);
+const canonical = new URL(Astro.url.pathname, siteUrl).toString();
+const rootUrl = siteUrl.toString().replace(/\/$/, '');
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: siteName,
+  url: rootUrl,
+  description,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${rootUrl}/search/?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
 ---
 <!doctype html>
 <html lang="en">
@@ -33,6 +49,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).to
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
     <title>{pageTitle}</title>
   </head>
   <body id="top">
@@ -51,5 +68,6 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).to
       </div>
       <div class="shell footer-small">Community archive · Pensilva & St Ive, Cornwall</div>
     </footer>
+    <ImageLightbox />
   </body>
 </html>

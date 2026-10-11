@@ -1,80 +1,50 @@
-# Pensilva History Group
+# Pensilva History
 
-The digital archive of the Pensilva History Group, covering the people, places, industry and social history of Pensilva and the Parish of St Ive in east Cornwall.
+A standalone digital archive of the history of Pensilva and St Ive in east Cornwall.
 
-## Architecture
+The repository preserves the historical material from the former Pensilva History Group website while the `astro-refresh` branch provides a new Astro presentation layer around it.
 
-The current presentation layer is built with **Astro** and deployed as a static site. The historical archive itself is deliberately kept independent of the framework:
+## Archive material
 
-- `src/people/*.md` — original People articles
-- `src/places/*.md` — original Places articles
-- `src/people/<slug>/` and `src/places/<slug>/` — article photographs
-- `src/images/engine-house.jpg` — homepage hero painting
-- `astro-src/` — Astro layouts, pages, styles and archive discovery features
+The original historical source remains in place:
 
-The older Gatsby source remains in the repository during the migration. The historical Markdown and photographs are the canonical content and should not be moved into Astro components.
+- `src/people/` — people, families, memories and documentary articles
+- `src/places/` — places, mines, buildings and local-history articles
+- `src/images/galleries/old-pensilva/` — Old Pensilva photographic collection
+- `src/images/galleries/modern-pensilva/` — Modern Pensilva photographic collection
+- `src/images/galleries/on-the-moor/` — On the Moor photographic collection
+- `src/images/engine-house.jpg` — the original homepage engine-house painting
+
+The Astro site does not rewrite the historical Markdown. It provides new navigation, search, subject taxonomy, related stories, image-led archive pages and a photographic archive around the preserved material.
 
 ## Development
 
-Requires Node 22.
-
-```sh
+```bash
 npm install
 npm run dev
 ```
 
-Build the production static site with:
+Build the static site with:
 
-```sh
+```bash
+npm run check:content
 npm run build
 ```
 
-The generated site is written to `dist/`.
+The content check verifies the archive structure, Markdown image references, the original article count, the three standalone photograph collections and the engine-house painting before deployment.
 
-## Adding an archive story
+## Site structure
 
-Add a Markdown file to either `src/people` or `src/places` using the existing front matter shape:
+- `/` — archive homepage
+- `/topics/` — curated subject routes
+- `/people/` — people and memories
+- `/places/` — places and landscape
+- `/photographs/` — standalone photographic collections
+- `/archive/` — complete article archive
+- `/search/` — full-text archive search
 
-```yaml
----
-title: Story title
-preview: PreviewPhoto.jpg
----
-```
+Existing article URLs under `/people/<slug>/` and `/places/<slug>/` are retained.
 
-If the story has photographs, keep them in a directory beside the Markdown file whose name matches the article slug. Reference them from Markdown with relative paths as the existing articles do.
+## Historical provenance
 
-Existing article URLs are intentionally preserved as:
-
-- `/people/<slug>/`
-- `/places/<slug>/`
-
-## Subjects
-
-The People/Places split is retained for compatibility, while broader subject browsing is defined in `astro-src/lib/taxonomy.ts`.
-
-When adding a story, add its slug to the taxonomy assignment table so it appears under the most useful subjects. A story can belong to more than one subject.
-
-## Search
-
-`/search/` provides client-side full-text search across titles, article Markdown and subject labels. There is no search service or database to maintain.
-
-## Images
-
-Archive cards use the existing `preview` image from each article. Images embedded in article Markdown remain part of the article and can be opened in a larger lightbox without changing the source Markdown.
-
-The homepage hero must continue to use `src/images/engine-house.jpg`.
-
-## Preservation rule
-
-Historical article copy, photographs and captions should be treated as archive material. If information has become outdated, prefer a clearly separated present-day note in the Astro presentation layer rather than silently rewriting the historical article.
-
-## Deployment
-
-Netlify builds the site with:
-
-```sh
-npm run build
-```
-
-and publishes `dist/`. GitHub Actions also runs a production build on pushes and pull requests.
+Some articles identify the Pensilva History Group because that is the provenance of the original material. The current site is presented simply as **Pensilva History**, a standalone archive, rather than as the website of a present-day organisation.

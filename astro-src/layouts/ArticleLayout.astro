@@ -11,6 +11,7 @@ interface Props { entry: ArchiveEntry; allEntries: ArchiveEntry[] }
 const { entry, allEntries } = Astro.props;
 const kindTitle = archiveLabel(entry.collection);
 const isEmily = entry.collection === 'people' && entry.id === 'emily-hobhouse';
+const isResearchHub = entry.collection === 'places' && entry.id === 'the-research-hub-local-and-family-history';
 const longForm = entry.body.length > 14000;
 const description = excerpt(entry.body, 165);
 ---
@@ -36,6 +37,7 @@ const description = excerpt(entry.body, 165);
         <a href="/archive/">Browse all stories →</a>
       </div>
       {isEmily && <CurrentContext />}
+      {isResearchHub && <div class="current-context"><p class="eyebrow">Archive note</p><h2>Published material</h2><p>This article describes the Research Hub as it operated when the piece was written. Some facilities, opening arrangements and contact details may have changed since then; the original article is preserved unchanged.</p></div>}
     </aside>
   </div>
   <RelatedStories current={entry} entries={allEntries} />

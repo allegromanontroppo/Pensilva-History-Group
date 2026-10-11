@@ -31,9 +31,19 @@
     currentIndex = (index + images.length) % images.length;
     const image = images[currentIndex];
     const imageCaption = captionFor(image);
+    const lightboxSrc = image.dataset.lightboxSrc;
+    const lightboxSrcSet = image.dataset.lightboxSrcset;
 
-    largeImage.src = image.currentSrc || image.src;
+    largeImage.src = lightboxSrc || image.currentSrc || image.src;
     largeImage.alt = image.alt || '';
+
+    if (lightboxSrcSet) {
+      largeImage.srcset = lightboxSrcSet;
+      largeImage.sizes = '90vw';
+    } else {
+      largeImage.removeAttribute('srcset');
+      largeImage.removeAttribute('sizes');
+    }
 
     if (caption instanceof HTMLElement) {
       caption.textContent = imageCaption;
